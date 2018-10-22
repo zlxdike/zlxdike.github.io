@@ -1,0 +1,785 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="macOS,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="题外话 本文建议有一定黑苹果基础的来看。也只是自己折腾Ozmosis引导的一些过程。仅供参考！  之前用的Clover引导的macOS 10.11。几个月前，由于某些原因，回到了win10。这两天又想用回macOS。本来不想折腾。直接用最新的Clover。加上之前10.11用的配置来引导macOS Sierra。没想到折腾几下都进不去。于是想。既然免不了折腾了。那干脆试试Ozmosis。后来换了几">
+<meta name="keywords" content="macOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B75M-D3V Ozmosis 再战macOS Sierra！">
+<meta property="og:url" content="http://zlxdike.github.io/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/index.html">
+<meta property="og:site_name" content="大叔，你怎么看！">
+<meta property="og:description" content="题外话 本文建议有一定黑苹果基础的来看。也只是自己折腾Ozmosis引导的一些过程。仅供参考！  之前用的Clover引导的macOS 10.11。几个月前，由于某些原因，回到了win10。这两天又想用回macOS。本来不想折腾。直接用最新的Clover。加上之前10.11用的配置来引导macOS Sierra。没想到折腾几下都进不去。于是想。既然免不了折腾了。那干脆试试Ozmosis。后来换了几">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2017041027908biso1.png">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2017041012846bios2.png">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2017041093192bios3.png">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170411732961.png">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170410149181275781971.jpg?imageView2/0/format/jpg">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2017041024677QQ20170410-162952.png">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/201704102709QQ20170410-163321.png">
+<meta property="og:updated_time" content="2018-10-22T02:19:04.250Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="B75M-D3V Ozmosis 再战macOS Sierra！">
+<meta name="twitter:description" content="题外话 本文建议有一定黑苹果基础的来看。也只是自己折腾Ozmosis引导的一些过程。仅供参考！  之前用的Clover引导的macOS 10.11。几个月前，由于某些原因，回到了win10。这两天又想用回macOS。本来不想折腾。直接用最新的Clover。加上之前10.11用的配置来引导macOS Sierra。没想到折腾几下都进不去。于是想。既然免不了折腾了。那干脆试试Ozmosis。后来换了几">
+<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/2017041027908biso1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zlxdike.github.io/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/">
+
+
+  <title> B75M-D3V Ozmosis 再战macOS Sierra！ | 大叔，你怎么看！ </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e4da885e36a6c6912ce45996d74616d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">大叔，你怎么看！</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                B75M-D3V Ozmosis 再战macOS Sierra！
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-10T01:32:32+08:00" content="2017-04-10">
+              2017-04-10
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/macOS/" itemprop="url" rel="index">
+                    <span itemprop="name">macOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><blockquote>
+<p>本文建议有一定黑苹果基础的来看。也只是自己折腾Ozmosis引导的一些过程。仅供参考！</p>
+</blockquote>
+<p>之前用的Clover引导的macOS 10.11。几个月前，由于某些原因，回到了win10。这两天又想用回macOS。本来不想折腾。直接用最新的Clover。加上之前10.11用的配置来引导macOS Sierra。没想到折腾几下都进不去。于是想。既然免不了折腾了。那干脆试试Ozmosis。后来换了几个Rom后的确。安装成功了。也进入了系统。。除了声卡。其它一切都没什么大问题。不过不知为何Ozmosis的EFI分区里面放入Kexts总是不行。。最后还是重新搞了Clover引导去测试了Kexts。</p>
+<blockquote>
+<p>所以。在没有完美主板ROM的时候，要想搞Ozmosis。最好还是先把Clover搞好。再去做Ozmosis引导！</p>
+</blockquote>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li>主板：技嘉GA B75M-D3V Rev 1.1</li>
+<li>显卡：迪兰恒进 AMD 6750 DDR5</li>
+<li>CPU：Intel E3 1230 V2</li>
+<li>声卡：ALC 887</li>
+<li>网卡：RTL 8111</li>
+</ul>
+<p>这配置都是好几年前的了。我第一台属于自己组装来黑苹果的，之前都是用家里的电脑黑。说到黑苹果。一眨眼就过去了那么多年。第一次黑的时候。还只是10.6，那时候10.7都还没出。也担任过Pcbeta的版主。现在都10.12了。时间过的真快！往事还历历在目！</p>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><blockquote>
+<p>文中提到的附件。都在文章结尾提供！</p>
+</blockquote>
+<h4 id="第一步刷BIOS"><a href="#第一步刷BIOS" class="headerlink" title="第一步刷BIOS"></a>第一步刷BIOS</h4><p>这里提供的BIOS是Rev1.1的。对于主板是Rev1.0 Rev1.1 Rev1.2的理论通用。。不建议REV2.0版本的刷！！！<br>刷前请搞清楚自己BIOS的版本！！！</p>
+<p>找个U盘格式化为Fat32。放入主板Bios Rom。重启。使用Q-Flash刷Bios。刷前最好先备份下原来的BIOS。这块主板有Daul Bios。也就是双BIOS。。大胆刷。。。不过还是有可能刷死的。。怕死就不用继续往下看了。<code>刷BIOS有风险。后果自负！！</code></p>
+<blockquote>
+<p>技嘉科技发明的一种双bios技术，让主bios rom(main bios)在不能工作的情况下由备份bios rom(back up bios)进行接管，并将备份bios中的出厂启动项重新写入主bios让主板顺利进入系统。</p>
+</blockquote>
+<p>我这里提供几个ROM：自己根据需求刷吧。每个ROM都是加入了Ozmosis引导的了。<br>刷完BIOS后设置下。<br><img src="http://oevfty3i3.bkt.clouddn.com/2017041027908biso1.png" alt="2017041027908biso1.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2017041012846bios2.png" alt="2017041012846bios2.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2017041093192bios3.png" alt="2017041093192bios3.png"></p>
+<blockquote>
+<p>一开始由于并不想用Clover引导。直接折腾的Ozmosis。。为此找了好几个ROM。直接去德国论坛下载的Ozmosis B75M Bios刷了压根进不去。。卡在苹果读条。。后面才知道是Bios里面的FakeSmc.kext导致。。我一开始用的Clover引导进不去也是由于这个Kext。</p>
+</blockquote>
+<ul>
+<li>B75MD3V-F13-Rev1.1-167x.rom</li>
+<li>B75MD3V-F13-Rev1.1-RTL8111.rom</li>
+<li>B75MD3V-F13-Rev1.1_AppleALC.rom </li>
+<li>B75MD3V-F13-Rev1.1_AppleALC_RTL8111.rom</li>
+<li>B75MD3V-F13-Rev1.1_AppleALC_RTL8111_DSDT.rom</li>
+</ul>
+<blockquote>
+<p>B75MD3V-F13-Rev1.1-167x.rom </p>
+</blockquote>
+<p>包含最基础的167x Ozmosis引导组件。<br>还带网卡驱动RTL8111 V1.2版本！<br>用了这个。除了声卡其它都驱动了。</p>
+<p>不过我的显卡早在用Clover引导的时候就不能通过Clover来驱动。只要通过Clover Inject Ati这种方式来驱动，虽然系统信息里面能显示ATI Radeon HD 5750。但是睡眠就唤醒不了。还有就是鼠标卡帧。。就是用着用着鼠标突然卡一下。很频繁。。由于这个ROM并没有Disable ATI Inject。所以这个睡眠和鼠标卡帧存在。。</p>
+<p>其实我这显卡。我改过显卡的ROM里面的ID。。直接改成5750的ID。并不需要任何工具。插上直接驱动。这也是为什么用Clover Inject Ati后系统里面显示的是5750.而不是6750。当然不知道是不是因为改了这个ID。导致通过Inject Ati驱动卡帧和睡眠唤醒不正常。。不过这样系统信息里面显示的是ATI Radeon HD5000。不过并不影响正常工作！</p>
+<blockquote>
+<p>B75MD3V-F13-Rev1.1-RTL8111.rom</p>
+</blockquote>
+<p>这个ROM是在<code>B75MD3V-F13-Rev1.1-167x.rom</code>的基础上。修改了OzmosisDefaults.plist。屏蔽掉Ati Inject解决鼠标掉帧卡顿。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;DisableAtiInjection&lt;/key&gt;</span><br><span class="line">&lt;true/&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>B75MD3V-F13-Rev1.1_AppleALC.rom </p>
+</blockquote>
+<p>这个ROM是在<code>B75MD3V-F13-Rev1.1-167x.rom</code>基础上删除了RTL8111网卡驱动。加入了声卡驱动。。Layout ID为5。。所以还要跟DSDT搭配才能成功驱动AppleHDA。先挂载EFI分区，在<code>/EFI/Oz/Acpi/Load</code>目录下放入DSDT即可！</p>
+<p>以下是挂载命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo diskutil list;       #查看EFI分区情况！我的电脑为disk0s1</span><br><span class="line">sudo mkdir /Volumes/EFI;  #新建分区目录将用于挂载EFI分区</span><br><span class="line">sudo mount -t msdos /dev/disk0s1 /Volumes/EFI    #根据情况修改disk0s1</span><br></pre></td></tr></table></figure>
+<p>有人可能会问了。为什么不直接插入AppleALC。而选择删除网卡驱动，在加入声卡驱动。原因是BIOS ROM的空间有限。不是想插入什么就插入什么的。。我一开始并不知道怎么样才能让2个驱动同时插入进去。期间将BIOS里面现有的Fakesmc和RTL8111kext替换了占用空间更小的版本。可是还是不够空间插入AppleALC。不过这个问题后来通过别的方法解决了。</p>
+<blockquote>
+<p>B75MD3V-F13-Rev1.1_AppleALC_RTL8111.rom</p>
+</blockquote>
+<p>这个ROM是在<code>B75MD3V-F13-Rev1.1-167x.rom</code>的基础上。替换了FakeSMC。升级RTL8111驱动为2.0版本。插入AppleALC驱动1.019版本。AppleALC从v1.1.0开始就把就需要搭配Lilu.kext才能驱动。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v1.1.0 AppleALC now has its kernel patcher moved to Lilu.kext</span><br></pre></td></tr></table></figure>
+<p>还有AppleALC还必须用GenAppleALC.sh处理下才能被Ozmosis引导。其实也就是将PinConfigs的Info.plist一起整合到AppleAlc的Info.plist中去即可！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ozmosis has a bug. It cannot load PinConfigs.kext. PinConfigs.kext has no CFBundleExecutable.</span><br><span class="line">To fix this you need to merge IOKitPersonalities from PinConfigs.kext with AppleALC.kext.</span><br></pre></td></tr></table></figure>
+<p>所以我选择用1.019版本纯属一开始为了减小Kext的大小。。如果是用最新的AppleALC+Lilu的话。远比1.019版本要大。</p>
+<p>至于BIOS空间问题的解决纯属意外发现。。OzMTool工具可以直接为最原始的ROM插入Ozmosis引导组件。我在用这个工具的时候发现。里面有个删除PXE的！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--aggressivity 0: Try to inject the files as-is</span><br><span class="line">--aggressivity 1: Deletes files for BIOS Network Support (PXE etc.)</span><br><span class="line">--aggressivity 2: Deletes non-essential Ozmosis files - keeps the Ozmosis base</span><br></pre></td></tr></table></figure>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/20170411732961.png" alt="20170411732961.png"></p>
+<p>删除的主要是这些模块。。PXE主要是网络唤醒。对我就是个没用的功能！<br>删除了PXE后。空间就明显够用了。。用了这个ROM后。搭配DSDT。基本可以算上完美了！！！<br>而且这个DSDT也修正了前置USB。</p>
+<blockquote>
+<p>B75MD3V-F13-Rev1.1_AppleALC_RTL8111_DSDT.rom</p>
+</blockquote>
+<p>此ROM是在<code>B75MD3V-F13-Rev1.1\_AppleALC\_RTL8111.rom</code>的基础上插入了DSDT。同样用的OzMTool。<br>刷了此ROM。EFI分区里面的DSDT都可以删除了。。只要这个BIOS ROM。全部搞定。。</p>
+<blockquote>
+<p>我一开始刷的B75MD3V-F13-Rev1.1-167x.rom这个最原始的进行的安装。虽然后面修改了好几个版本的ROM。不过我倒没去测试过能否正常安装。。上面说的一堆都是废话。。与我配置相近的可以直接B75MD3V-F13-Rev1.1_AppleALC_RTL8111.rom去试试。失败的话。在换别的ROM做尝试！</p>
+</blockquote>
+<h4 id="第二步制作安装盘"><a href="#第二步制作安装盘" class="headerlink" title="第二步制作安装盘"></a>第二步制作安装盘</h4><p>如果还有一个U盘可以直接写个macOS Sierra懒人版。如果没有。可以格式化了原来的U盘。总之一句话。制作个懒人版安装盘。。懒人版可以去Pcbeta下载。这里不啰嗦了。据说Ozmosis可以直接原版光盘安装。不过我没试过。我只试过懒人版！找的Pcbeta最新的10.12.4懒人版。</p>
+<h4 id="第三步开始安装"><a href="#第三步开始安装" class="headerlink" title="第三步开始安装"></a>第三步开始安装</h4><p>正常情况下刷了上面的BIOS ROM后。插入macOS安装盘。并通过第一步的设置后。开机按F12直接选安装盘引导。就可以开始安装了。安装过程很容易！</p>
+<h4 id="第四步完善"><a href="#第四步完善" class="headerlink" title="第四步完善"></a>第四步完善</h4><p>10.12.4这个版本。AMD显卡很多都出现闪屏。只要屏幕内容有任何改变，比如打字啊。打开窗口啊等等。屏幕就闪。颜色也变得很奇怪！解决方法也很简单。。用SwitchResX修改下百万色即可解决！</p>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/20170410149181275781971.jpg?imageView2/0/format/jpg" alt="jpg"></p>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/2017041024677QQ20170410-162952.png" alt="2017041024677QQ20170410-162952.png"></p>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/201704102709QQ20170410-163321.png" alt="201704102709QQ20170410-163321.png"></p>
+<p>原来修改前Billion of colors居然是30位彩色。修改后Million of colors反而是32位彩色。怀疑系统本身的Bug。不知道后面的版本会不会修复！</p>
+<p>原本我这显卡。用的DVI线连接的显示器。启动系统后。字体有一点点发虚。。使用Inject Ati的方式驱动显卡。就不会有这个问题。。但是鼠标卡顿不然忍。。于是想想算了。鱼和熊掌不可兼得。我宁愿字体有点发虚。但是可以换来唤醒正常。以及鼠标不卡帧。。</p>
+<p>后来无意中睡眠唤醒后或者关闭显示器重开或者睡眠显示器重开。字体立马清晰回来。。就想起来显示器不是有自动调整的功能吗。。比如屏幕显示画面有一点错误。按下自动调整。可以自动把画面调整为正确位置。。才发现这个是VGA接口才有的功能。DVI没有这个功能。。于是换了条VGA线后。。果然。。这个问题就解决了。</p>
+<blockquote>
+<p>所以字体发虚的朋友们可以试试看！不一定有用！不过对我有用！！爽啊！</p>
+</blockquote>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><blockquote>
+<p>从没这么简单！</p>
+</blockquote>
+<p>不过这一切都建立在有好的ROM。这期间我折腾了几天。一开始找了好几个。一直卡住引导白苹果进度条。后来找到一个可以引导的ROM后。就开始各种折腾。各种完善。。期间刷BIOS不下数十次！看了上文也知道。我在BIOS ROM上花费的时间占整个过程至少9成时间！</p>
+<p>至于为什么不折腾Colver。。最重要的一点就是更新太快。。。太久没关注。。。感觉要花好多时间去跟上步骤。。。而Ozmosis更新少。稳定。。当然还有一点，以前从没搞过Ozmosis，也想尝尝鲜。所以我选择折腾Ozmosis。。不过更新少的东西。就可能随时不在更新。。不知道Ozmosis会不会就此止步10.12。。。</p>
+<blockquote>
+<p>附件：链接:<a href="https://pan.baidu.com/s/1pLDG2BD" target="_blank" rel="noopener">https://pan.baidu.com/s/1pLDG2BD</a> 密码:j36m</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/macOS/" rel="tag">#macOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/26/买个Vultr搭个SS梯子，稍微优化后到处遨游/" rel="next" title="买个Vultr搭个SS梯子，稍微优化后到处遨游">
+                <i class="fa fa-chevron-left"></i> 买个Vultr搭个SS梯子，稍微优化后到处遨游
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/28/服务器Mysql数据库定时备份到本地PC/" rel="prev" title="服务器Mysql数据库定时备份到本地PC">
+                服务器Mysql数据库定时备份到本地PC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/" data-title="B75M-D3V Ozmosis 再战macOS Sierra！" data-content="" data-url="http://zlxdike.github.io/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/">
+  <div class="ds-share-inline">
+    <ul class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/" data-title="B75M-D3V Ozmosis 再战macOS Sierra！" data-url="http://zlxdike.github.io/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="zlxdike">
+          <p class="site-author-name" itemprop="name">zlxdike</p>
+          <p class="site-description motion-element" itemprop="description">努力就一定有未来？</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题外话"><span class="nav-number">1.</span> <span class="nav-text">题外话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装过程"><span class="nav-number">3.</span> <span class="nav-text">安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步刷BIOS"><span class="nav-number">3.1.</span> <span class="nav-text">第一步刷BIOS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步制作安装盘"><span class="nav-number">3.2.</span> <span class="nav-text">第二步制作安装盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三步开始安装"><span class="nav-number">3.3.</span> <span class="nav-text">第三步开始安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四步完善"><span class="nav-number">3.4.</span> <span class="nav-text">第四步完善</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结束语"><span class="nav-number">4.</span> <span class="nav-text">结束语</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zlxdike</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zlxdike"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>

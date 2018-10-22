@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="服务器安全,mysql,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
+<meta name="keywords" content="服务器安全,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器Mysql数据库定时备份到本地PC">
+<meta property="og:url" content="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/index.html">
+<meta property="og:site_name" content="大叔，你怎么看！">
+<meta property="og:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
+<meta property="og:updated_time" content="2018-10-22T02:19:04.251Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="服务器Mysql数据库定时备份到本地PC">
+<meta name="twitter:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
+<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/">
+
+
+  <title> 服务器Mysql数据库定时备份到本地PC | 大叔，你怎么看！ </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e4da885e36a6c6912ce45996d74616d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">大叔，你怎么看！</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                服务器Mysql数据库定时备份到本地PC
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-28T14:39:54+08:00" content="2017-05-28">
+              2017-05-28
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/28/服务器Mysql数据库定时备份到本地PC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/28/服务器Mysql数据库定时备份到本地PC/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！</p>
+<h3 id="Mysql相关设置"><a href="#Mysql相关设置" class="headerlink" title="Mysql相关设置"></a>Mysql相关设置</h3><p>创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！<br>先登录mysql</p>
+<p><code>mysql -u root -p</code></p>
+<p>创建备份权限的用户<code>{bakname}</code>，<code>{passwd}</code>自行修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT,RELOAD,SHOW DATABASES,LOCK TABLES,EVENT,REPLICATION CLIENT ON *.* TO &#123;bakname&#125;@&quot;%&quot; IDENTIFIED BY &quot;&#123;passwd&#125;&quot;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<p>由于要备份到本地的PC上所以我设置的用户是具有远程访问权限的！</p>
+<h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg" alt="jpg"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
+<p>我选择用<code>launchctl</code>。<br>这个是通过plist配置的方式来实现定时任务的，其优点就是最小时间间隔是一秒</p>
+<p>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。</p>
+<p>可以通过两种方式来设置脚本的执行时间。一个是使用<code>StartInterval</code>，它指定脚本每间隔多长时间（单位：秒）执行一次；另外一个使用<code>StartCalendarInterval</code>，它可以指定脚本在多少分钟、小时、天、星期几、月时间上执行，类似如crontab的中的设置。</p>
+<p>例:</p>
+<p>新建一个shell文件/Users/yourname/Documents/bakmysql.sh，并将mysqldump与bakmysql.sh放在一起。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># Name:bakmysql.sh</span><br><span class="line"># This is a ShellScript For Auto DB Backup and Delete old Backup</span><br><span class="line"># 备份路径</span><br><span class="line">backupdir=/Users/yourname/bak/mysql</span><br><span class="line"># 用户名密码自行修改</span><br><span class="line">user=&#123;bakname&#125;</span><br><span class="line">passwd=&apos;&#123;passwd&#125;&apos;</span><br><span class="line"># 数据库名</span><br><span class="line">db=db</span><br><span class="line">time=` date +%Y%m%d%H%M `</span><br><span class="line"># 增加可执行权限</span><br><span class="line">chmod +x $backupdir/mysqldump</span><br><span class="line"></span><br><span class="line"># 设置mysql ip和port</span><br><span class="line">host=&#123;ip&#125;</span><br><span class="line">port=&#123;port&#125;</span><br><span class="line"># 设置将要备份的表名。有的表可能不是需要备份的。比如日志。自己考虑！</span><br><span class="line">table=&apos;error user user_order&apos;</span><br><span class="line"># 使用mysqldump备份数据</span><br><span class="line">$backupdir/mysqldump -u $user -p$passwd -P $port -h $host $db $table | gzip &gt; $backupdir/database_$time.sql.gz</span><br><span class="line"># 删除7天前的备份</span><br><span class="line">find $backupdir -name &quot;database_*.sql.gz&quot; -type f -mtime +7 -exec rm &#123;&#125; \; &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">echo &quot;success&quot;</span><br></pre></td></tr></table></figure>
+<p>该脚本。将数据库数据备份后并压缩。同时会删除7天前的数据备份。可以自行参考修改！<br>脚本要改成可执行的权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 bakmysql.sh</span><br></pre></td></tr></table></figure>
+<p>进入到<code>~/Library/LaunchAgents</code>下建一个plist文件<code>com.yourname.bakmysql.plist</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span><br><span class="line">&lt;plist version=&quot;1.0&quot;&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">  &lt;key&gt;Label&lt;/key&gt;</span><br><span class="line">  &lt;string&gt;com.yourname.bakmysql.plist&lt;/string&gt;</span><br><span class="line">  &lt;key&gt;ProgramArguments&lt;/key&gt;</span><br><span class="line">  &lt;array&gt;</span><br><span class="line">    &lt;string&gt;/Users/yourname/bak/mysql/bakmysql.sh&lt;/string&gt;</span><br><span class="line">  &lt;/array&gt;</span><br><span class="line">  &lt;key&gt;StartCalendarInterval&lt;/key&gt;</span><br><span class="line">  &lt;dict&gt;</span><br><span class="line">        &lt;key&gt;Minute&lt;/key&gt;</span><br><span class="line">        &lt;integer&gt;4&lt;/integer&gt;</span><br><span class="line">        &lt;key&gt;Hour&lt;/key&gt;</span><br><span class="line">        &lt;integer&gt;13&lt;/integer&gt;</span><br><span class="line">  &lt;/dict&gt;</span><br><span class="line">  &lt;key&gt;StandardOutPath&lt;/key&gt;</span><br><span class="line">&lt;string&gt;/Users/yourname/bak/mysql/bakmysql.log&lt;/string&gt;</span><br><span class="line">&lt;key&gt;StandardErrorPath&lt;/key&gt;</span><br><span class="line">&lt;string&gt;/Users/yourname/bak/mysql/bakmysqlerr.log&lt;/string&gt;</span><br><span class="line">&lt;/dict&gt;</span><br><span class="line">&lt;/plist&gt;</span><br></pre></td></tr></table></figure>
+<p><code>label</code>这里就是给这个任务名个名字，这里一般取plist的文件名，这个名字不能和其它的plist重复。<code>bakmysql.sh</code>就是我们要执行的脚本，<code>StartCalendarInterval</code>里边的参数是说每一天13点4分的时候执行一下脚本。</p>
+<p>然后就可以用下面的几个命令进行操作我们做好的任务了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">launchctl load   com.yourname.bakmysql.plist</span><br><span class="line">launchctl unload com.yourname.bakmysql.plist</span><br><span class="line">launchctl start  com.yourname.bakmysql.plist</span><br><span class="line">launchctl stop   com.yourname.bakmysql.plist</span><br><span class="line">launchctl list</span><br></pre></td></tr></table></figure>
+<ol>
+<li>要让任务生效，必须先load命令加载这个plist。</li>
+<li>如果任务被修改了，那么必须先unload，然后重新load。</li>
+<li>start可以测试任务，这个是立即执行，不管时间到了没有。</li>
+<li>执行start和unload前，任务必须先load过，否则报错。</li>
+<li>stop可以停止任务。</li>
+</ol>
+<p><code>ProgramArguments</code>内不能直接写命令，只能通过shell脚本来执行。<br>上面的任务我们也可以指定为每隔30秒执行一次，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span><br><span class="line">&lt;plist version=&quot;1.0&quot;&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;Label&lt;/key&gt;</span><br><span class="line">    &lt;string&gt;com.yourname.bakmysql.plist&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;ProgramArguments&lt;/key&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">        &lt;string&gt;/Users/yourname/bak/mysql/bakmysql.sh&lt;/string&gt;</span><br><span class="line">    &lt;/array&gt;</span><br><span class="line">    &lt;key&gt;KeepAlive&lt;/key&gt;</span><br><span class="line">    &lt;false/&gt;</span><br><span class="line">    &lt;key&gt;RunAtLoad&lt;/key&gt;</span><br><span class="line">    &lt;true/&gt;</span><br><span class="line">    &lt;key&gt;StartInterval&lt;/key&gt;</span><br><span class="line">    &lt;integer&gt;30&lt;/integer&gt;</span><br><span class="line">&lt;/dict&gt;</span><br><span class="line">&lt;/plist&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/服务器安全/" rel="tag">#服务器安全</a>
+          
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/" rel="next" title="B75M-D3V Ozmosis 再战macOS Sierra！">
+                <i class="fa fa-chevron-left"></i> B75M-D3V Ozmosis 再战macOS Sierra！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/28/Vultr-VPS-SSH密钥登录/" rel="prev" title="Vultr VPS SSH密钥登录">
+                Vultr VPS SSH密钥登录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/05/28/服务器Mysql数据库定时备份到本地PC/" data-title="服务器Mysql数据库定时备份到本地PC" data-content="" data-url="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/">
+  <div class="ds-share-inline">
+    <ul class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/28/服务器Mysql数据库定时备份到本地PC/" data-title="服务器Mysql数据库定时备份到本地PC" data-url="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="zlxdike">
+          <p class="site-author-name" itemprop="name">zlxdike</p>
+          <p class="site-description motion-element" itemprop="description">努力就一定有未来？</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql相关设置"><span class="nav-number">2.</span> <span class="nav-text">Mysql相关设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#macOS配置"><span class="nav-number">3.</span> <span class="nav-text">macOS配置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zlxdike</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zlxdike"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
