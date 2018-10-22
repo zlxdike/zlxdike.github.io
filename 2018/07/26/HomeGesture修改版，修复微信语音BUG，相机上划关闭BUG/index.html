@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="插件,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="需求原版HomeGesture很容易误触，容易导致微信语音取消有bug。很烦。所以就自己修改了下。目前看来可以很有效解决这个问题。 须知 不过只测试过iPhone7 Plus。理论上支持其他机型。自行测试后果自负。是否与其他插件冲突未知。 版本号越高改动的越多，越容易与其他插件冲突。若只是需要修复微信的BUG。请使用低版本。 原版可以去VitaTaf作者Github下载 基于VitaTaf原版1.">
+<meta name="keywords" content="插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG">
+<meta property="og:url" content="http://zlxdike.github.io/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/index.html">
+<meta property="og:site_name" content="大叔，你怎么看！">
+<meta property="og:description" content="需求原版HomeGesture很容易误触，容易导致微信语音取消有bug。很烦。所以就自己修改了下。目前看来可以很有效解决这个问题。 须知 不过只测试过iPhone7 Plus。理论上支持其他机型。自行测试后果自负。是否与其他插件冲突未知。 版本号越高改动的越多，越容易与其他插件冲突。若只是需要修复微信的BUG。请使用低版本。 原版可以去VitaTaf作者Github下载 基于VitaTaf原版1.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/62424520.jpg">
+<meta property="og:updated_time" content="2018-10-22T15:08:48.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG">
+<meta name="twitter:description" content="需求原版HomeGesture很容易误触，容易导致微信语音取消有bug。很烦。所以就自己修改了下。目前看来可以很有效解决这个问题。 须知 不过只测试过iPhone7 Plus。理论上支持其他机型。自行测试后果自负。是否与其他插件冲突未知。 版本号越高改动的越多，越容易与其他插件冲突。若只是需要修复微信的BUG。请使用低版本。 原版可以去VitaTaf作者Github下载 基于VitaTaf原版1.">
+<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/62424520.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zlxdike.github.io/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/">
+
+
+  <title> HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG | 大叔，你怎么看！ </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e4da885e36a6c6912ce45996d74616d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">大叔，你怎么看！</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-07-26T00:59:57+08:00" content="2018-07-26">
+              2018-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS-Tweak/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS Tweak</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>原版HomeGesture很容易误触，容易导致微信语音取消有bug。很烦。所以就自己修改了下。目前看来可以很有效解决这个问题。</p>
+<h3 id="须知"><a href="#须知" class="headerlink" title="须知"></a>须知</h3><ol>
+<li>不过只测试过iPhone7 Plus。理论上支持其他机型。自行测试后果自负。是否与其他插件冲突未知。</li>
+<li>版本号越高改动的越多，越容易与其他插件冲突。若只是需要修复微信的BUG。请使用低版本。</li>
+<li>原版可以去<a href="https://github.com/VitaTaf/HomeGesture" target="_blank" rel="noopener">VitaTaf作者Github下载</a></li>
+<li>基于VitaTaf原版1.4做的修改</li>
+<li>只提供deb包。可以用7-ZIP解压提取dylib文件。</li>
+</ol>
+<h3 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h3><ul>
+<li>ver1.1 【20180726】</li>
+</ul>
+<ol>
+<li>运营商恢复显示</li>
+<li>后台上滑结束APP</li>
+<li>调低灵敏度解决微信语音BUG，微信表情滑动BUG，视频滑块移动BUG</li>
+<li>截图恢复原按键方案HOME+电源键</li>
+<li>灵敏度下调，有效解决快速滚动页面（safari等）意外退出APP</li>
+</ol>
+<ul>
+<li>ver1.2 【20180726】</li>
+</ul>
+<ol>
+<li>微调灵敏度，灵敏度比1.1好一点点</li>
+</ol>
+<ul>
+<li>ver1.3 【20180728】</li>
+</ul>
+<ol>
+<li>恢复灵敏度 </li>
+<li>微信BUG通过延时来解决</li>
+<li>任何类似滑动就触发手势得。统统按住一会后再滑动就不会触发手势。</li>
+<li>比如滑动表情分类。按住一会在滑动。就不会触发手势</li>
+<li>比如语音按住一会后。随时上划都不会触发手势。</li>
+<li>比如视频滑块，按住一会再滑动就不会触发手势</li>
+</ol>
+<ul>
+<li>ver1.4【20180730】</li>
+</ul>
+<ol>
+<li>修复相机BUG<code>发出来才发现- -可能需要上划2次。。等有空再看了</code></li>
+<li>去除锁屏右上角横条</li>
+<li>去除CC横条</li>
+<li>修复后台左右滑动后，上滑关闭APP失效BUG</li>
+<li>截图方案改为iPhoneX方案。音量加键+锁屏键</li>
+<li>恢复左上角快捷返回</li>
+</ol>
+<ul>
+<li>ver1.5【20180808】</li>
+</ul>
+<ol>
+<li>修复相机BUG</li>
+<li>缩小CC上面的空白区域</li>
+<li>截图方案恢复Home+电源键，解决长按音量键无反应BUG</li>
+</ol>
+<ul>
+<li>ver1.6【20180809】</li>
+</ul>
+<ol>
+<li>锁屏页面相机按妞和手电筒按妞控制</li>
+<li>新增设置</li>
+<li>灵敏度自己于设置中调节。最大值为原版HomeGesture灵敏度</li>
+</ol>
+<ul>
+<li>ver1.72【20180810】</li>
+</ul>
+<ol>
+<li>锁屏右上角横条加入开关</li>
+<li>加入底部手势左中右区域控制。锁屏，控制中心</li>
+</ol>
+<ul>
+<li>ver1.73【20180812】</li>
+</ul>
+<ol>
+<li>修复修改设置后可能需要注销2次才生效的bug</li>
+<li>修复快捷放回开关不生效的bug</li>
+<li>修复上划关闭通知。触发其他手势的BUG，比如关闭通知中心触发控制中心</li>
+<li>加入去除右上角CC手势开关</li>
+<li>加入CC原样式开关（需要左中右区域至少一个是控制中心手势）</li>
+</ol>
+<ul>
+<li>ver1.74【20180812】</li>
+</ul>
+<ol>
+<li>修复横屏状态下HomeGesture手势失效</li>
+<li>CC原动画加入手势跟随。</li>
+<li>加入开启键盘屏蔽手势</li>
+</ol>
+<ul>
+<li>ver1.75【20180823】</li>
+</ul>
+<ol>
+<li>修复横屏下。不支持横屏的APP中手势失效</li>
+<li>新增APP中手势。锁屏页面手势。主屏页面手势自定义</li>
+<li>新增截图方案开关</li>
+<li>修复横屏状态下手势出现的部分Bug</li>
+<li>新增底部小横条开关</li>
+</ol>
+<ul>
+<li>ver1.76【20180824】</li>
+</ul>
+<ol>
+<li>修复横屏下。左右区域HomeGesture不生效</li>
+<li>修复锁屏页面手势调用时出现的某些BUG</li>
+<li>修复调用手势时，某些页面也一并向上滚动的BUG</li>
+</ol>
+<ul>
+<li>ver1.77【20180826】</li>
+</ul>
+<ol>
+<li>新增指定APP禁用手势</li>
+</ol>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/18-10-22/62424520.jpg" alt="jpg"></p>
+<blockquote>
+<p>低灵敏度方案，用过Tage可能会用的比较习惯。。从屏幕边缘外上滑进去。就很容易触发！<br>此修改主要还是针对我自己。分享出来只是为了有共同需求也可以拿去用。<br>只是自己对原插件针对自己做的小调整，不喜勿喷。</p>
+</blockquote>
+<p>iOS11越狱，不同工具越狱出来的插件加载路径不太一样。有点混乱。复制dylib和plist到插件加载目录里即可。</p>
+<p>路径可能是其中一种。。</p>
+<p>/bootstrap/Library/SBInject/</p>
+<p>/usr/lib/TweakInject</p>
+<p>/Library/MobileSubstrate/DynamicLibraries</p>
+<p>或者直接安装Filza安装deb包或者<code>dpkg -i ****.deb</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/插件/" rel="tag">#插件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/28/Vultr-VPS-SSH密钥登录/" rel="next" title="Vultr VPS SSH密钥登录">
+                <i class="fa fa-chevron-left"></i> Vultr VPS SSH密钥登录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/22/Windows硬链接解决某盘空间不足/" rel="prev" title="Windows硬链接解决某盘空间不足">
+                Windows硬链接解决某盘空间不足 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" data-title="HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG" data-content="" data-url="http://zlxdike.github.io/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/">
+  <div class="ds-share-inline">
+    <ul class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" data-title="HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG" data-url="http://zlxdike.github.io/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="zlxdike">
+          <p class="site-author-name" itemprop="name">zlxdike</p>
+          <p class="site-description motion-element" itemprop="description">努力就一定有未来？</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#须知"><span class="nav-number">2.</span> <span class="nav-text">须知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新历史"><span class="nav-number">3.</span> <span class="nav-text">更新历史</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zlxdike</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zlxdike"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>

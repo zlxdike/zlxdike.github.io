@@ -402,6 +402,246 @@
             
               
                 
+                <a class="post-title-link" href="/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" itemprop="url">
+                  HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-07-26T00:59:57+08:00" content="2018-07-26">
+              2018-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS-Tweak/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS Tweak</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>原版HomeGesture很容易误触，容易导致微信语音取消有bug。很烦。所以就自己修改了下。目前看来可以很有效解决这个问题。</p>
+<h3 id="须知"><a href="#须知" class="headerlink" title="须知"></a>须知</h3><ol>
+<li>不过只测试过iPhone7 Plus。理论上支持其他机型。自行测试后果自负。是否与其他插件冲突未知。</li>
+<li>版本号越高改动的越多，越容易与其他插件冲突。若只是需要修复微信的BUG。请使用低版本。</li>
+<li>原版可以去<a href="https://github.com/VitaTaf/HomeGesture" target="_blank" rel="noopener">VitaTaf作者Github下载</a></li>
+<li>基于VitaTaf原版1.4做的修改</li>
+<li>只提供deb包。可以用7-ZIP解压提取dylib文件。</li>
+</ol>
+<h3 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h3><ul>
+<li>ver1.1 【20180726】</li>
+</ul>
+<ol>
+<li>运营商恢复显示</li>
+<li>后台上滑结束APP</li>
+<li>调低灵敏度解决微信语音BUG，微信表情滑动BUG，视频滑块移动BUG</li>
+<li>截图恢复原按键方案HOME+电源键</li>
+<li>灵敏度下调，有效解决快速滚动页面（safari等）意外退出APP</li>
+</ol>
+<ul>
+<li>ver1.2 【20180726】</li>
+</ul>
+<ol>
+<li>微调灵敏度，灵敏度比1.1好一点点</li>
+</ol>
+<ul>
+<li>ver1.3 【20180728】</li>
+</ul>
+<ol>
+<li>恢复灵敏度 </li>
+<li>微信BUG通过延时来解决</li>
+<li>任何类似滑动就触发手势得。统统按住一会后再滑动就不会触发手势。</li>
+<li>比如滑动表情分类。按住一会在滑动。就不会触发手势</li>
+<li>比如语音按住一会后。随时上划都不会触发手势。</li>
+<li>比如视频滑块，按住一会再滑动就不会触发手势</li>
+</ol>
+<ul>
+<li>ver1.4【20180730】</li>
+</ul>
+<ol>
+<li>修复相机BUG<code>发出来才发现- -可能需要上划2次。。等有空再看了</code></li>
+<li>去除锁屏右上角横条</li>
+<li>去除CC横条</li>
+<li>修复后台左右滑动后，上滑关闭APP失效BUG</li>
+<li>截图方案改为iPhoneX方案。音量加键+锁屏键</li>
+<li>恢复左上角快捷返回</li>
+</ol>
+<ul>
+<li>ver1.5【20180808】</li>
+</ul>
+<ol>
+<li>修复相机BUG</li>
+<li>缩小CC上面的空白区域</li>
+<li>截图方案恢复Home+电源键，解决长按音量键无反应BUG</li>
+</ol>
+<ul>
+<li>ver1.6【20180809】</li>
+</ul>
+<ol>
+<li>锁屏页面相机按妞和手电筒按妞控制</li>
+<li>新增设置</li>
+<li>灵敏度自己于设置中调节。最大值为原版HomeGesture灵敏度</li>
+</ol>
+<ul>
+<li>ver1.72【20180810】</li>
+</ul>
+<ol>
+<li>锁屏右上角横条加入开关</li>
+<li>加入底部手势左中右区域控制。锁屏，控制中心</li>
+</ol>
+<ul>
+<li>ver1.73【20180812】</li>
+</ul>
+<ol>
+<li>修复修改设置后可能需要注销2次才生效的bug</li>
+<li>修复快捷放回开关不生效的bug</li>
+<li>修复上划关闭通知。触发其他手势的BUG，比如关闭通知中心触发控制中心</li>
+<li>加入去除右上角CC手势开关</li>
+<li>加入CC原样式开关（需要左中右区域至少一个是控制中心手势）</li>
+</ol>
+<ul>
+<li>ver1.74【20180812】</li>
+</ul>
+<ol>
+<li>修复横屏状态下HomeGesture手势失效</li>
+<li>CC原动画加入手势跟随。</li>
+<li>加入开启键盘屏蔽手势</li>
+</ol>
+<ul>
+<li>ver1.75【20180823】</li>
+</ul>
+<ol>
+<li>修复横屏下。不支持横屏的APP中手势失效</li>
+<li>新增APP中手势。锁屏页面手势。主屏页面手势自定义</li>
+<li>新增截图方案开关</li>
+<li>修复横屏状态下手势出现的部分Bug</li>
+<li>新增底部小横条开关</li>
+</ol>
+<ul>
+<li>ver1.76【20180824】</li>
+</ul>
+<ol>
+<li>修复横屏下。左右区域HomeGesture不生效</li>
+<li>修复锁屏页面手势调用时出现的某些BUG</li>
+<li>修复调用手势时，某些页面也一并向上滚动的BUG</li>
+</ol>
+<ul>
+<li>ver1.77【20180826】</li>
+</ul>
+<ol>
+<li>新增指定APP禁用手势</li>
+</ol>
+<p><img src="http://oevfty3i3.bkt.clouddn.com/18-10-22/62424520.jpg" alt="jpg"></p>
+<blockquote>
+<p>低灵敏度方案，用过Tage可能会用的比较习惯。。从屏幕边缘外上滑进去。就很容易触发！<br>此修改主要还是针对我自己。分享出来只是为了有共同需求也可以拿去用。<br>只是自己对原插件针对自己做的小调整，不喜勿喷。</p>
+</blockquote>
+<p>iOS11越狱，不同工具越狱出来的插件加载路径不太一样。有点混乱。复制dylib和plist到插件加载目录里即可。</p>
+<p>路径可能是其中一种。。</p>
+<p>/bootstrap/Library/SBInject/</p>
+<p>/usr/lib/TweakInject</p>
+<p>/Library/MobileSubstrate/DynamicLibraries</p>
+<p>或者直接安装Filza安装deb包或者<code>dpkg -i ****.deb</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/28/Vultr-VPS-SSH密钥登录/" itemprop="url">
                   Vultr VPS SSH密钥登录
                 </a>
@@ -1585,131 +1825,13 @@ git push origin master
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/11/Hello-Hexo/" itemprop="url">
-                  Hello Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T15:42:27+08:00" content="2016-10-11">
-              2016-10-11
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/11/Hello-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/Hello-Hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>想想距离第一次建站已经4年有余。当初果然也只是一时兴起，寥寥写了2篇不痛不痒的博文。当年用的Octopress，如今也不再更新了。现在使用Hexo来建站，希望真能坚持写下去。（说的好像用Hexo就会写下去似的）</p>
-<p>好记性不如烂笔头。相信很多人建Blog很大原因都是为了记录，以便以后翻看。也许是越长大越觉得做这个有必要了（可能真老了）。</p>
-<p>总之尽力记录下去吧。。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1746,7 +1868,7 @@ git push origin master
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1754,7 +1876,7 @@ git push origin master
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1763,7 +1885,7 @@ git push origin master
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
