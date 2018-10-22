@@ -93,7 +93,7 @@
 <meta property="og:description" content="需求为什么需要SS，相信我不用说，大伙也都明白。现在的梯子还是有很多的，看个人喜欢。 Vultr VPS 做下小广告，用我这个邀请链接注册可以你可以获得20刀Vultr点我注册友情提醒：注册Vultr后要充值最少5刀，才能新建主机（支持Payplay、信用卡支付）  国内想要有相对好的速度，一般都会选择香港、日本或者新加坡的VPS。主要还要看你的网络环境。电信、联通、移动？Vultr目前有提供日本">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20161026147745868558619.jpg?imageView2/0/format/jpg">
-<meta property="og:updated_time" content="2018-10-22T02:19:04.250Z">
+<meta property="og:updated_time" content="2018-10-22T15:16:33.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="买个Vultr搭个SS梯子，稍微优化后到处遨游">
 <meta name="twitter:description" content="需求为什么需要SS，相信我不用说，大伙也都明白。现在的梯子还是有很多的，看个人喜欢。 Vultr VPS 做下小广告，用我这个邀请链接注册可以你可以获得20刀Vultr点我注册友情提醒：注册Vultr后要充值最少5刀，才能新建主机（支持Payplay、信用卡支付）  国内想要有相对好的速度，一般都会选择香港、日本或者新加坡的VPS。主要还要看你的网络环境。电信、联通、移动？Vultr目前有提供日本">
@@ -345,6 +345,7 @@
 <blockquote>
 <p>修改<strong>/etc/sysconfig/network-scripts/ifcfg-eth0</strong>文件<br>将ONBOOT=no改为ONBOOT=yes<br>重启VPS即可</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h3><p>这里有一键安装shadowsocks-libev脚本,安装过程会让设置密码和端口！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh</span><br><span class="line">chmod +x shadowsocks-libev.sh</span><br><span class="line">./shadowsocks-libev.sh 2&gt;&amp;1 | tee shadowsocks-libev.log</span><br></pre></td></tr></table></figure>
 <p>shadowsocks-libev相关命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>查看状态：/etc/init.d/shadowsocks status</p>

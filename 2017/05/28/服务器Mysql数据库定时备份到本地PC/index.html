@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="服务器安全,mysql,">
+  <meta name="keywords" content="mysql,服务器安全,">
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
-<meta name="keywords" content="服务器安全,mysql">
+<meta name="description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
+<meta name="keywords" content="mysql,服务器安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器Mysql数据库定时备份到本地PC">
 <meta property="og:url" content="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/index.html">
 <meta property="og:site_name" content="大叔，你怎么看！">
-<meta property="og:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
+<meta property="og:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
-<meta property="og:updated_time" content="2018-10-22T02:19:04.251Z">
+<meta property="og:updated_time" content="2018-10-22T15:16:36.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器Mysql数据库定时备份到本地PC">
-<meta name="twitter:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！ Mysql相关设置创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！先登录mysql mysql -u root -p">
+<meta name="twitter:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
 <meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
 
 
@@ -337,7 +337,7 @@
       
 
       
-        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！</p>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！<br><a id="more"></a></p>
 <h3 id="Mysql相关设置"><a href="#Mysql相关设置" class="headerlink" title="Mysql相关设置"></a>Mysql相关设置</h3><p>创建一个专门用于备份的用户，当然你喜欢用root用户来备份也是可以！<br>先登录mysql</p>
 <p><code>mysql -u root -p</code></p>
 <p>创建备份权限的用户<code>{bakname}</code>，<code>{passwd}</code>自行修改</p>
@@ -387,9 +387,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/服务器安全/" rel="tag">#服务器安全</a>
-          
             <a href="/tags/mysql/" rel="tag">#mysql</a>
+          
+            <a href="/tags/服务器安全/" rel="tag">#服务器安全</a>
           
         </div>
       

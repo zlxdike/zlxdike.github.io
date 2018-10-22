@@ -1,0 +1,15 @@
+Package: com.zlxdike.HomeGesture
+Version: 1.77
+Architecture: iphoneos-arm
+Depends: firmware (>= 11.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.77_iphoneos-arm.deb
+Size: 98482
+MD5sum: c93ecc85e9fa864ee8e61f2b7f83954e
+SHA1: 7c7a62f6d1c46d8496bb66f51debcf183d3f1435
+SHA256: c682acbf51a1ae10e1f6587bb969f1707fb792bf6a0c0c0ce30e18ff4f2a18d2
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
