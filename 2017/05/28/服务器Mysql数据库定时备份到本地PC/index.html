@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="服务器安全,mysql,">
+  <meta name="keywords" content="mysql,服务器安全,">
 
 
 
@@ -85,19 +85,19 @@
 
 
 <meta name="description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
-<meta name="keywords" content="服务器安全,mysql">
+<meta name="keywords" content="mysql,服务器安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器Mysql数据库定时备份到本地PC">
 <meta property="og:url" content="http://zlxdike.github.io/2017/05/28/服务器Mysql数据库定时备份到本地PC/index.html">
 <meta property="og:site_name" content="大叔，你怎么看！">
 <meta property="og:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
-<meta property="og:updated_time" content="2018-10-22T15:16:36.418Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103300.png">
+<meta property="og:updated_time" content="2018-10-23T02:33:18.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器Mysql数据库定时备份到本地PC">
 <meta name="twitter:description" content="需求数据库就是命脉。一切东西都可以不见。环境没了重新搭建。。系统崩了。重装。。但是数据没了。哭去吧。。于是定期备份数据库别提有多重要的。。你可以选择定期备份在服务器上。也可以选择定期备份到自己的PC上。本文是定期备份到我自己的macOS上。。其他系统可以参考！">
-<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103300.png">
 
 
 
@@ -343,7 +343,7 @@
 <p>创建备份权限的用户<code>{bakname}</code>，<code>{passwd}</code>自行修改</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT,RELOAD,SHOW DATABASES,LOCK TABLES,EVENT,REPLICATION CLIENT ON *.* TO &#123;bakname&#125;@&quot;%&quot; IDENTIFIED BY &quot;&#123;passwd&#125;&quot;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
 <p>由于要备份到本地的PC上所以我设置的用户是具有远程访问权限的！</p>
-<h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg" alt="jpg"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
+<h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103300.png" alt="png"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
 <p>我选择用<code>launchctl</code>。<br>这个是通过plist配置的方式来实现定时任务的，其优点就是最小时间间隔是一秒</p>
 <p>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。</p>
 <p>可以通过两种方式来设置脚本的执行时间。一个是使用<code>StartInterval</code>，它指定脚本每间隔多长时间（单位：秒）执行一次；另外一个使用<code>StartCalendarInterval</code>，它可以指定脚本在多少分钟、小时、天、星期几、月时间上执行，类似如crontab的中的设置。</p>
@@ -387,9 +387,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/服务器安全/" rel="tag">#服务器安全</a>
-          
             <a href="/tags/mysql/" rel="tag">#mysql</a>
+          
+            <a href="/tags/服务器安全/" rel="tag">#服务器安全</a>
           
         </div>
       

@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而释放C盘空间占用！">
+<meta name="description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而">
 <meta name="keywords" content="Windows技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows硬链接解决某盘空间不足">
 <meta property="og:url" content="http://zlxdike.github.io/2018/10/22/Windows硬链接解决某盘空间不足/index.html">
 <meta property="og:site_name" content="大叔，你怎么看！">
-<meta property="og:description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而释放C盘空间占用！">
+<meta property="og:description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/55115147.jpg">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/46119017.jpg">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/30906530.jpg">
-<meta property="og:updated_time" content="2018-10-22T15:16:30.573Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102901.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102924.png">
+<meta property="og:updated_time" content="2018-10-23T02:31:10.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows硬链接解决某盘空间不足">
-<meta name="twitter:description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而释放C盘空间占用！">
-<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/18-10-22/55115147.jpg">
+<meta name="twitter:description" content="需求iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102625.png">
 
 
 
@@ -339,18 +339,18 @@
       
 
       
-        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而释放C盘空间占用！<br><img src="http://oevfty3i3.bkt.clouddn.com/18-10-22/55115147.jpg" alt="jpg"><br><a id="more"></a></p>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>iTunes备份太庞大导致C盘空间不足，还有Vmware虚拟机创建得时候默认用了C盘，随着后期使用可能导致C盘空间不足。同个硬链接可以把iTunes备份转移到其他盘，把Vmware虚拟机转移到其他盘，从而<img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102625.png" alt="png"><br><a id="more"></a></p>
 <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>下载一个 <a href="https://download.sysinternals.com/files/Junction.zip" target="_blank" rel="noopener">Junction 工具</a></p>
 <p>###正式开始</p>
 <ol>
 <li>下载来的Junction.zip解压出来。假设解压在<code>D:\junction</code>。</li>
-<li>找到你的 iTunes 备份文件夹，Win10这个文件夹会在： <code>%APPDATA%\Apple Computer\MobileSync</code>复制到文件夹管理器回车即可显示真实路径！<br><img src="http://oevfty3i3.bkt.clouddn.com/18-10-22/46119017.jpg" alt="jpg"><br>C:\Users\（你的用户名）\AppData\Roaming\Apple Computer\MobileSync</li>
+<li>找到你的 iTunes 备份文件夹，Win10这个文件夹会在： <code>%APPDATA%\Apple Computer\MobileSync</code>复制到文件夹管理器回车即可显示真实路径！<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102901.png" alt="png"><br>C:\Users\（你的用户名）\AppData\Roaming\Apple Computer\MobileSync</li>
 <li>在D盘创建一个文件夹叫iTunesBackup(名字随便)</li>
 <li>把iTunes备份文件夹（MobileSync）剪切到<code>D:\iTunesBackup</code></li>
 <li>打开cmd(管理员权限运行)。输入以下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:        			#先切换到D盘</span><br><span class="line">cd D:/junction</span><br><span class="line">junction &quot;C:\Users\（你的用户名）\AppData\Roaming\Apple Computer\MobileSync&quot; &quot;D:\iTunesBackup\MobileSync&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>回到<code>%APPDATA%\Apple Computer\</code>，会发现<code>MobileSync</code>的图标上有一个小箭头，打开之后会直接进入你链接去的磁盘。<br><img src="http://oevfty3i3.bkt.clouddn.com/18-10-22/30906530.jpg" alt="jpg"><br>iTunes 里不需要任何修改，也不需要重新分区，C 盘空间重新被释放，一切使用都可以照旧。</p>
+<p>回到<code>%APPDATA%\Apple Computer\</code>，会发现<code>MobileSync</code>的图标上有一个小箭头，打开之后会直接进入你链接去的磁盘。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023102924.png" alt="png"><br>iTunes 里不需要任何修改，也不需要重新分区，C 盘空间重新被释放，一切使用都可以照旧。</p>
 <p>类似得Vmware也可以根据这样进行操作。</p>
 
       
