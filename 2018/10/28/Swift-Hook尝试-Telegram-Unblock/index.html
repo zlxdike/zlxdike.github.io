@@ -93,7 +93,7 @@
 <meta property="og:description" content="Cydia源：http://zlxdike.github.io/repo 需求最新得Telegram已经开始全部使用Swift开发了。导致之前得tgunblock tweak失效。于是就想要自己试试hook swift。也当作一个学习过程吧。研究了一半后发现已经有现成插件了，叫nsfwgram，支持swift版的Telegram，不过既然都开始研究了，也顺便继续下去。自己在写一个吧。 分析Gith">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181028010736.png">
-<meta property="og:updated_time" content="2018-10-28T07:43:15.813Z">
+<meta property="og:updated_time" content="2018-10-28T07:46:04.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift Hook尝试(Telegram Unblock)">
 <meta name="twitter:description" content="Cydia源：http://zlxdike.github.io/repo 需求最新得Telegram已经开始全部使用Swift开发了。导致之前得tgunblock tweak失效。于是就想要自己试试hook swift。也当作一个学习过程吧。研究了一半后发现已经有现成插件了，叫nsfwgram，支持swift版的Telegram，不过既然都开始研究了，也顺便继续下去。自己在写一个吧。 分析Gith">
@@ -351,7 +351,7 @@
       
         <p>Cydia源：<code>http://zlxdike.github.io/repo</code></p>
 <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>最新得Telegram已经开始全部使用Swift开发了。导致之前得tgunblock tweak失效。于是就想要自己试试hook swift。也当作一个学习过程吧。<code>研究了一半后发现已经有现成插件了，叫nsfwgram，支持swift版的Telegram，不过既然都开始研究了，也顺便继续下去。自己在写一个吧。</code></p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>Github上其实有Swift版Telegram的源码，能减少很多功夫。项目叫<a href="https://github.com/overtake/TelegramSwift" target="_blank" rel="noopener">TelegramSwift</a><br>git clone下来看了下。hook<code>PeerUtils.swift</code>中的<a href="https://github.com/peter-iakovlev/TelegramCore/blob/5ff1b009127adb935f1caab0a4af8c8d5350d612/TelegramCore/PeerUtils.swift#L41" target="_blank" rel="noopener">public var restrictionText: String?{}</a>方法就可以解决channel被屏蔽的问题</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>Github上其实有Swift版Telegram的源码，能减少很多功夫。项目叫<a href="https://github.com/overtake/TelegramSwift" target="_blank" rel="noopener">TelegramSwift</a><br>git clone下来看了下。hook<code>PeerUtils.swift</code>中的<a href="https://github.com/peter-iakovlev/TelegramCore/blob/5ff1b009127adb935f1caab0a4af8c8d5350d612/TelegramCore/PeerUtils.swift#L41" target="_blank" rel="noopener">public var restrictionText: String?{}</a>方法就可以解决channel被屏蔽的问题<br><a id="more"></a></p>
 <h1 id="实施"><a href="#实施" class="headerlink" title="实施"></a>实施</h1><p>虽然我们知道了要hook的相关内容了。但是我们知道swift编译后没法使用class-dump把类dump下来，这是因为swift所有的函数名都被mangled类似C++程序编译后的函数名。姑且叫它<code>Swift Name Mangling</code>。<br>举几个例子：</p>
 <ol>
 <li><code>hello.Rect.subscript.getter (hello.Direction) -&gt; Swift.Int</code>重整为<code>_TFV5hello4Rectg9subscriptFOS_9DirectionSi</code></li>
