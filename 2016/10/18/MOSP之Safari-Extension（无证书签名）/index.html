@@ -116,15 +116,15 @@
 <meta property="og:site_name" content="小渣渣">
 <meta property="og:description" content="IdeaSafari10支持App Extension。于是想做一个在视频页点击ToolbarItem后在MOSP解析播放，如果是电视剧，还将所有集都解析进播放列表。  前提：Safari10只支持10.11.5以上的版本  拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视 实现 本文基于Xcode8.0和OS X EI Capitan 10.11.6  Safari Ex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2016101842228QQ20161018-4.png">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2016101827497QQ20161018-0.png">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2016101837561QQ20161018-1.png">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/2016101895221QQ20161018-2.png">
-<meta property="og:updated_time" content="2018-10-28T09:59:09.325Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103516.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103614.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103629.png">
+<meta property="og:updated_time" content="2018-11-07T17:43:12.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MOSP之Safari Extension（无证书签名）">
 <meta name="twitter:description" content="IdeaSafari10支持App Extension。于是想做一个在视频页点击ToolbarItem后在MOSP解析播放，如果是电视剧，还将所有集都解析进播放列表。  前提：Safari10只支持10.11.5以上的版本  拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视 实现 本文基于Xcode8.0和OS X EI Capitan 10.11.6  Safari Ex">
-<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/2016101842228QQ20161018-4.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103516.png">
 
 
 
@@ -421,15 +421,15 @@
 <blockquote>
 <p>前提：Safari10只支持10.11.5以上的版本</p>
 </blockquote>
-<p><a href="/../../../../../2016/10/12/拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视/">拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视</a><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101842228QQ20161018-4.png" alt="2016101842228QQ20161018-4.png"></p>
+<p><a href="/../../../../../2016/10/12/拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视/">拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视</a><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103516.png" alt="2016101842228QQ20161018-4.png"></p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><blockquote>
 <p>本文基于Xcode8.0和OS X EI Capitan 10.11.6</p>
 </blockquote>
-<p>Safari Extension Info需要设置SFSafariContentScript<em>（用于注入Script）</em>、SFSafariToolbarItem<em>(用于设置工具栏点击图标)</em>、SFSafariWebsiteAccess<em>(用于设置哪些网站允许注入使用改Extension)</em><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101827497QQ20161018-0.png" alt="2016101827497QQ20161018-0.png"><br>要在Safari成功加载该App Extension还有几个需要注意的地方：</p>
+<p>Safari Extension Info需要设置SFSafariContentScript<em>（用于注入Script）</em>、SFSafariToolbarItem<em>(用于设置工具栏点击图标)</em>、SFSafariWebsiteAccess<em>(用于设置哪些网站允许注入使用改Extension)</em><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103602.png" alt="2016101827497QQ20161018-0.png"><br>要在Safari成功加载该App Extension还有几个需要注意的地方：</p>
 <h4 id="Safari浏览器相关设置"><a href="#Safari浏览器相关设置" class="headerlink" title="Safari浏览器相关设置"></a>Safari浏览器相关设置</h4><p>Safari浏览器开发菜单需要在<strong><em>Safari设置–&gt;高级–&gt;在菜单栏显示“开发”菜单</em></strong>启用，然后在开发菜单中勾选上允许未签名的扩展</p>
 <h4 id="Xcode中相关设置"><a href="#Xcode中相关设置" class="headerlink" title="Xcode中相关设置"></a>Xcode中相关设置</h4><h5 id="一、Safari-Extension-Deployment-Target设置"><a href="#一、Safari-Extension-Deployment-Target设置" class="headerlink" title="一、Safari Extension Deployment Target设置"></a>一、Safari Extension Deployment Target设置</h5><p>我用于开发的系统10.11.6，默认创建的Safari Extension模版中Deployment Target是10.12，不将Deployment Target设置为10.11的话编译后Safari浏览器扩展列表中始终不会加载。</p>
-<h5 id="二、相关Swift文件的Target-Membership设置"><a href="#二、相关Swift文件的Target-Membership设置" class="headerlink" title="二、相关Swift文件的Target Membership设置"></a>二、相关Swift文件的Target Membership设置</h5><p>设置相关Swift文件的Target Membership是为了App与Safari Extension之间代码能直接重用<br><img src="http://oevfty3i3.bkt.clouddn.com/2016101837561QQ20161018-1.png" alt="2016101837561QQ20161018-1.png"></p>
-<h5 id="三、App-Group设置"><a href="#三、App-Group设置" class="headerlink" title="三、App Group设置"></a>三、App Group设置</h5><p>准确的说，App与Safari Extension属于2个不同的App，所以要分别为App和Safari Extension设置App Group，二者都加入<strong>com.zlxdike.MOSP.Data</strong>同一个Group。这样才能让2个不同的App共享和交互数据。<br><img src="http://oevfty3i3.bkt.clouddn.com/2016101895221QQ20161018-2.png" alt="2016101895221QQ20161018-2.png"><br>通过上面的设置后，App与Safari Extension就可以共用代码和交互数据了。至于通过Swift如果共用数据简单说下吧。</p>
+<h5 id="二、相关Swift文件的Target-Membership设置"><a href="#二、相关Swift文件的Target-Membership设置" class="headerlink" title="二、相关Swift文件的Target Membership设置"></a>二、相关Swift文件的Target Membership设置</h5><p>设置相关Swift文件的Target Membership是为了App与Safari Extension之间代码能直接重用<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103614.png" alt="2016101837561QQ20161018-1.png"></p>
+<h5 id="三、App-Group设置"><a href="#三、App-Group设置" class="headerlink" title="三、App Group设置"></a>三、App Group设置</h5><p>准确的说，App与Safari Extension属于2个不同的App，所以要分别为App和Safari Extension设置App Group，二者都加入<strong>com.zlxdike.MOSP.Data</strong>同一个Group。这样才能让2个不同的App共享和交互数据。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103629.png" alt="2016101895221QQ20161018-2.png"><br>通过上面的设置后，App与Safari Extension就可以共用代码和交互数据了。至于通过Swift如果共用数据简单说下吧。</p>
 <ul>
 <li>透过UserDefaults存取和读取需要共用的数据（比如本文中的播放列表）</li>
 <li>透过NotificationCenter来Post通知数据更改。App ViewController接获通知，更新页面。</li>

@@ -109,19 +109,19 @@
 
 
   <meta name="description" content="需求当VPS暴露在外网中，就会有人不断暴力破解你的SSH登录。于是就有必要使用SSH密钥来登录。并关闭密码登录。用以下命令可以查看别人暴力破解你SSH密码登录的大概情况！ 1grep &amp;quot;Failed password for invalid user&amp;quot; /var/log/secure | awk &amp;apos;&amp;#123;print $13&amp;#125;&amp;apos; | sort">
-<meta name="keywords" content="服务器安全,SSH">
+<meta name="keywords" content="SSH,服务器安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vultr VPS SSH密钥登录">
 <meta property="og:url" content="http://zlxdike.github.io/2017/05/28/Vultr-VPS-SSH密钥登录/index.html">
 <meta property="og:site_name" content="小渣渣">
 <meta property="og:description" content="需求当VPS暴露在外网中，就会有人不断暴力破解你的SSH登录。于是就有必要使用SSH密钥来登录。并关闭密码登录。用以下命令可以查看别人暴力破解你SSH密码登录的大概情况！ 1grep &amp;quot;Failed password for invalid user&amp;quot; /var/log/secure | awk &amp;apos;&amp;#123;print $13&amp;#125;&amp;apos; | sort">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595407252948.jpg?imageView2/0/format/jpg">
-<meta property="og:updated_time" content="2018-10-28T09:59:09.328Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103158.png">
+<meta property="og:updated_time" content="2018-11-07T17:47:56.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vultr VPS SSH密钥登录">
 <meta name="twitter:description" content="需求当VPS暴露在外网中，就会有人不断暴力破解你的SSH登录。于是就有必要使用SSH密钥来登录。并关闭密码登录。用以下命令可以查看别人暴力破解你SSH密码登录的大概情况！ 1grep &amp;quot;Failed password for invalid user&amp;quot; /var/log/secure | awk &amp;apos;&amp;#123;print $13&amp;#125;&amp;apos; | sort">
-<meta name="twitter:image" content="http://oevfty3i3.bkt.clouddn.com/20170528149595407252948.jpg?imageView2/0/format/jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103158.png">
 
 
 
@@ -416,7 +416,7 @@
       
         <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>当VPS暴露在外网中，就会有人不断暴力破解你的SSH登录。于是就有必要使用SSH密钥来登录。并关闭密码登录。<br>用以下命令可以查看别人暴力破解你SSH密码登录的大概情况！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;Failed password for invalid user&quot; /var/log/secure | awk &apos;&#123;print $13&#125;&apos; | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/20170528149595407252948.jpg?imageView2/0/format/jpg" alt="jpg"><br>就我自己的购买的VPS来说。暴力破解次数最多达到2475次！各位也可以去看看自己的。。</p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103158.png" alt="jpg"><br>就我自己的购买的VPS来说。暴力破解次数最多达到2475次！各位也可以去看看自己的。。</p>
 <h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>使用<code>ssh-keygen</code>在自己的PC上来生成密钥对。Linux或者macOS都可以直接通过terminal来操作！如果是windows。需要用PuTTYgen软件来生成。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]$ ssh-keygen -t rsa &lt;== 建立密钥对</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/root/.ssh/id_rsa): &lt;== 按 Enter</span><br><span class="line">Created directory &apos;/root/.ssh&apos;.</span><br><span class="line">Enter passphrase (empty for no passphrase): &lt;== 输入密钥锁码，或直接按 Enter 留空</span><br><span class="line">Enter same passphrase again: &lt;== 再输入一遍密钥锁码</span><br><span class="line">Your identification has been saved in /root/.ssh/id_rsa. &lt;== 私钥</span><br><span class="line">Your public key has been saved in /root/.ssh/id_rsa.pub. &lt;== 公钥</span><br></pre></td></tr></table></figure>
 <p>可参考<a href="https://www.vultr.com/docs/how-do-i-generate-ssh-keys/" target="_blank" rel="noopener">Vultr官方生成教程</a></p>
@@ -481,9 +481,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/服务器安全/" rel="tag"># 服务器安全</a>
-          
             <a href="/tags/SSH/" rel="tag"># SSH</a>
+          
+            <a href="/tags/服务器安全/" rel="tag"># 服务器安全</a>
           
         </div>
       

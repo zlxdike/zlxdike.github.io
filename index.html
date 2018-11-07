@@ -950,7 +950,7 @@
           
             <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>当VPS暴露在外网中，就会有人不断暴力破解你的SSH登录。于是就有必要使用SSH密钥来登录。并关闭密码登录。<br>用以下命令可以查看别人暴力破解你SSH密码登录的大概情况！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;Failed password for invalid user&quot; /var/log/secure | awk &apos;&#123;print $13&#125;&apos; | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/20170528149595407252948.jpg?imageView2/0/format/jpg" alt="jpg"><br>就我自己的购买的VPS来说。暴力破解次数最多达到2475次！各位也可以去看看自己的。。</p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103158.png" alt="jpg"><br>就我自己的购买的VPS来说。暴力破解次数最多达到2475次！各位也可以去看看自己的。。</p>
 <h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>使用<code>ssh-keygen</code>在自己的PC上来生成密钥对。Linux或者macOS都可以直接通过terminal来操作！如果是windows。需要用PuTTYgen软件来生成。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]$ ssh-keygen -t rsa &lt;== 建立密钥对</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/root/.ssh/id_rsa): &lt;== 按 Enter</span><br><span class="line">Created directory &apos;/root/.ssh&apos;.</span><br><span class="line">Enter passphrase (empty for no passphrase): &lt;== 输入密钥锁码，或直接按 Enter 留空</span><br><span class="line">Enter same passphrase again: &lt;== 再输入一遍密钥锁码</span><br><span class="line">Your identification has been saved in /root/.ssh/id_rsa. &lt;== 私钥</span><br><span class="line">Your public key has been saved in /root/.ssh/id_rsa.pub. &lt;== 公钥</span><br></pre></td></tr></table></figure>
 <p>可参考<a href="https://www.vultr.com/docs/how-do-i-generate-ssh-keys/" target="_blank" rel="noopener">Vultr官方生成教程</a></p>
@@ -1138,7 +1138,7 @@
 <p>创建备份权限的用户<code>{bakname}</code>，<code>{passwd}</code>自行修改</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT,RELOAD,SHOW DATABASES,LOCK TABLES,EVENT,REPLICATION CLIENT ON *.* TO &#123;bakname&#125;@&quot;%&quot; IDENTIFIED BY &quot;&#123;passwd&#125;&quot;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
 <p>由于要备份到本地的PC上所以我设置的用户是具有远程访问权限的！</p>
-<h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="http://oevfty3i3.bkt.clouddn.com/20170528149595696780542.jpg?imageView2/0/format/jpg" alt="jpg"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
+<h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103300.png" alt="jpg"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
 <p>我选择用<code>launchctl</code>。<br>这个是通过plist配置的方式来实现定时任务的，其优点就是最小时间间隔是一秒</p>
 <p>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。</p>
 <p>可以通过两种方式来设置脚本的执行时间。一个是使用<code>StartInterval</code>，它指定脚本每间隔多长时间（单位：秒）执行一次；另外一个使用<code>StartCalendarInterval</code>，它可以指定脚本在多少分钟、小时、天、星期几、月时间上执行，类似如crontab的中的设置。</p>
@@ -1348,7 +1348,7 @@
 <blockquote>
 <p>技嘉科技发明的一种双bios技术，让主bios rom(main bios)在不能工作的情况下由备份bios rom(back up bios)进行接管，并将备份bios中的出厂启动项重新写入主bios让主板顺利进入系统。</p>
 </blockquote>
-<p>我这里提供几个ROM：自己根据需求刷吧。每个ROM都是加入了Ozmosis引导的了。<br>刷完BIOS后设置下。<br><img src="http://oevfty3i3.bkt.clouddn.com/2017041027908biso1.png" alt="2017041027908biso1.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2017041012846bios2.png" alt="2017041012846bios2.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2017041093192bios3.png" alt="2017041093192bios3.png"></p>
+<p>我这里提供几个ROM：自己根据需求刷吧。每个ROM都是加入了Ozmosis引导的了。<br>刷完BIOS后设置下。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103350.png" alt="2017041027908biso1.png"><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103341.png" alt="2017041012846bios2.png"><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103329.png" alt="2017041093192bios3.png"></p>
 <blockquote>
 <p>一开始由于并不想用Clover引导。直接折腾的Ozmosis。。为此找了好几个ROM。直接去德国论坛下载的Ozmosis B75M Bios刷了压根进不去。。卡在苹果读条。。后面才知道是Bios里面的FakeSmc.kext导致。。我一开始用的Clover引导进不去也是由于这个Kext。</p>
 </blockquote>
@@ -1387,7 +1387,7 @@
 <p>所以我选择用1.019版本纯属一开始为了减小Kext的大小。。如果是用最新的AppleALC+Lilu的话。远比1.019版本要大。</p>
 <p>至于BIOS空间问题的解决纯属意外发现。。OzMTool工具可以直接为最原始的ROM插入Ozmosis引导组件。我在用这个工具的时候发现。里面有个删除PXE的！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--aggressivity 0: Try to inject the files as-is</span><br><span class="line">--aggressivity 1: Deletes files for BIOS Network Support (PXE etc.)</span><br><span class="line">--aggressivity 2: Deletes non-essential Ozmosis files - keeps the Ozmosis base</span><br></pre></td></tr></table></figure>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/20170411732961.png" alt="20170411732961.png"></p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103411.png" alt="20170411732961.png"></p>
 <p>删除的主要是这些模块。。PXE主要是网络唤醒。对我就是个没用的功能！<br>删除了PXE后。空间就明显够用了。。用了这个ROM后。搭配DSDT。基本可以算上完美了！！！<br>而且这个DSDT也修正了前置USB。</p>
 <blockquote>
 <p>B75MD3V-F13-Rev1.1_AppleALC_RTL8111_DSDT.rom</p>
@@ -1399,9 +1399,9 @@
 <h4 id="第二步制作安装盘"><a href="#第二步制作安装盘" class="headerlink" title="第二步制作安装盘"></a>第二步制作安装盘</h4><p>如果还有一个U盘可以直接写个macOS Sierra懒人版。如果没有。可以格式化了原来的U盘。总之一句话。制作个懒人版安装盘。。懒人版可以去Pcbeta下载。这里不啰嗦了。据说Ozmosis可以直接原版光盘安装。不过我没试过。我只试过懒人版！找的Pcbeta最新的10.12.4懒人版。</p>
 <h4 id="第三步开始安装"><a href="#第三步开始安装" class="headerlink" title="第三步开始安装"></a>第三步开始安装</h4><p>正常情况下刷了上面的BIOS ROM后。插入macOS安装盘。并通过第一步的设置后。开机按F12直接选安装盘引导。就可以开始安装了。安装过程很容易！</p>
 <h4 id="第四步完善"><a href="#第四步完善" class="headerlink" title="第四步完善"></a>第四步完善</h4><p>10.12.4这个版本。AMD显卡很多都出现闪屏。只要屏幕内容有任何改变，比如打字啊。打开窗口啊等等。屏幕就闪。颜色也变得很奇怪！解决方法也很简单。。用SwitchResX修改下百万色即可解决！</p>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/20170410149181275781971.jpg?imageView2/0/format/jpg" alt="jpg"></p>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/2017041024677QQ20170410-162952.png" alt="2017041024677QQ20170410-162952.png"></p>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/201704102709QQ20170410-163321.png" alt="201704102709QQ20170410-163321.png"></p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103426.png" alt="jpg"></p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103437.png" alt="2017041024677QQ20170410-162952.png"></p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103449.png" alt="201704102709QQ20170410-163321.png"></p>
 <p>原来修改前Billion of colors居然是30位彩色。修改后Million of colors反而是32位彩色。怀疑系统本身的Bug。不知道后面的版本会不会修复！</p>
 <p>原本我这显卡。用的DVI线连接的显示器。启动系统后。字体有一点点发虚。。使用Inject Ati的方式驱动显卡。就不会有这个问题。。但是鼠标卡顿不然忍。。于是想想算了。鱼和熊掌不可兼得。我宁愿字体有点发虚。但是可以换来唤醒正常。以及鼠标不卡帧。。</p>
 <p>后来无意中睡眠唤醒后或者关闭显示器重开或者睡眠显示器重开。字体立马清晰回来。。就想起来显示器不是有自动调整的功能吗。。比如屏幕显示画面有一点错误。按下自动调整。可以自动把画面调整为正确位置。。才发现这个是VGA接口才有的功能。DVI没有这个功能。。于是换了条VGA线后。。果然。。这个问题就解决了。</p>
@@ -1624,7 +1624,7 @@
 <blockquote>
 <p>一句话，自己用的爽就行了。</p>
 </blockquote>
-<p><img src="http://oevfty3i3.bkt.clouddn.com/20161026147745868558619.jpg?imageView2/0/format/jpg" alt="20161026147745868558619.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108014338.png" alt=""></p>
 
           
         
@@ -1794,15 +1794,15 @@
 <blockquote>
 <p>前提：Safari10只支持10.11.5以上的版本</p>
 </blockquote>
-<p><a href="/../../../../../2016/10/12/拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视/">拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视</a><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101842228QQ20161018-4.png" alt="2016101842228QQ20161018-4.png"></p>
+<p><a href="/../../../../../2016/10/12/拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视/">拒绝Flash，视频搜索播放！支持优酷、爱奇艺、芒果TV、QQ视频、乐视</a><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103516.png" alt="2016101842228QQ20161018-4.png"></p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><blockquote>
 <p>本文基于Xcode8.0和OS X EI Capitan 10.11.6</p>
 </blockquote>
-<p>Safari Extension Info需要设置SFSafariContentScript<em>（用于注入Script）</em>、SFSafariToolbarItem<em>(用于设置工具栏点击图标)</em>、SFSafariWebsiteAccess<em>(用于设置哪些网站允许注入使用改Extension)</em><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101827497QQ20161018-0.png" alt="2016101827497QQ20161018-0.png"><br>要在Safari成功加载该App Extension还有几个需要注意的地方：</p>
+<p>Safari Extension Info需要设置SFSafariContentScript<em>（用于注入Script）</em>、SFSafariToolbarItem<em>(用于设置工具栏点击图标)</em>、SFSafariWebsiteAccess<em>(用于设置哪些网站允许注入使用改Extension)</em><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103602.png" alt="2016101827497QQ20161018-0.png"><br>要在Safari成功加载该App Extension还有几个需要注意的地方：</p>
 <h4 id="Safari浏览器相关设置"><a href="#Safari浏览器相关设置" class="headerlink" title="Safari浏览器相关设置"></a>Safari浏览器相关设置</h4><p>Safari浏览器开发菜单需要在<strong><em>Safari设置–&gt;高级–&gt;在菜单栏显示“开发”菜单</em></strong>启用，然后在开发菜单中勾选上允许未签名的扩展</p>
 <h4 id="Xcode中相关设置"><a href="#Xcode中相关设置" class="headerlink" title="Xcode中相关设置"></a>Xcode中相关设置</h4><h5 id="一、Safari-Extension-Deployment-Target设置"><a href="#一、Safari-Extension-Deployment-Target设置" class="headerlink" title="一、Safari Extension Deployment Target设置"></a>一、Safari Extension Deployment Target设置</h5><p>我用于开发的系统10.11.6，默认创建的Safari Extension模版中Deployment Target是10.12，不将Deployment Target设置为10.11的话编译后Safari浏览器扩展列表中始终不会加载。</p>
-<h5 id="二、相关Swift文件的Target-Membership设置"><a href="#二、相关Swift文件的Target-Membership设置" class="headerlink" title="二、相关Swift文件的Target Membership设置"></a>二、相关Swift文件的Target Membership设置</h5><p>设置相关Swift文件的Target Membership是为了App与Safari Extension之间代码能直接重用<br><img src="http://oevfty3i3.bkt.clouddn.com/2016101837561QQ20161018-1.png" alt="2016101837561QQ20161018-1.png"></p>
-<h5 id="三、App-Group设置"><a href="#三、App-Group设置" class="headerlink" title="三、App Group设置"></a>三、App Group设置</h5><p>准确的说，App与Safari Extension属于2个不同的App，所以要分别为App和Safari Extension设置App Group，二者都加入<strong>com.zlxdike.MOSP.Data</strong>同一个Group。这样才能让2个不同的App共享和交互数据。<br><img src="http://oevfty3i3.bkt.clouddn.com/2016101895221QQ20161018-2.png" alt="2016101895221QQ20161018-2.png"><br>通过上面的设置后，App与Safari Extension就可以共用代码和交互数据了。至于通过Swift如果共用数据简单说下吧。</p>
+<h5 id="二、相关Swift文件的Target-Membership设置"><a href="#二、相关Swift文件的Target-Membership设置" class="headerlink" title="二、相关Swift文件的Target Membership设置"></a>二、相关Swift文件的Target Membership设置</h5><p>设置相关Swift文件的Target Membership是为了App与Safari Extension之间代码能直接重用<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103614.png" alt="2016101837561QQ20161018-1.png"></p>
+<h5 id="三、App-Group设置"><a href="#三、App-Group设置" class="headerlink" title="三、App Group设置"></a>三、App Group设置</h5><p>准确的说，App与Safari Extension属于2个不同的App，所以要分别为App和Safari Extension设置App Group，二者都加入<strong>com.zlxdike.MOSP.Data</strong>同一个Group。这样才能让2个不同的App共享和交互数据。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103629.png" alt="2016101895221QQ20161018-2.png"><br>通过上面的设置后，App与Safari Extension就可以共用代码和交互数据了。至于通过Swift如果共用数据简单说下吧。</p>
 <ul>
 <li>透过UserDefaults存取和读取需要共用的数据（比如本文中的播放列表）</li>
 <li>透过NotificationCenter来Post通知数据更改。App ViewController接获通知，更新页面。</li>
@@ -1975,17 +1975,13 @@
       
         
           
-            <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。</p>
-<pre><code>cd ~/Documents/hexo                   # 进入Hexo根目录
-hexo new post ${title}                # ${title}为博文标题
-open -a macdown source/_post/${title} # 使用macdown打开
-</code></pre><p>编辑完要发布还需要执行下面命令</p>
+            <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    cd ~/Documents/hexo                   # 进入Hexo根目录</span><br><span class="line">    hexo new post $&#123;title&#125;                # $&#123;title&#125;为博文标题</span><br><span class="line">    open -a macdown source/_post/$&#123;title&#125; # 使用macdown打开</span><br><span class="line">```  </span><br><span class="line">编辑完要发布还需要执行下面命令</span><br></pre></td></tr></table></figure></p>
 <pre><code>hexo g   # 等价于hexo generate 生成静态文件
 hexo d   # 等价于hexo deploy   发布
-</code></pre><p>也许还需要执行下面命令，清除或检查效果。</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">也许还需要执行下面命令，清除或检查效果。</span><br></pre></td></tr></table></figure>
 <pre><code>hexo clean    # 清除已经生成的静态文件
 hexo server   # 启动本地服务器查看
-</code></pre><p>写一篇博文执行这些也无所谓了。可是当多写几篇。我会被烦死了。越来越懒。也许懒是进步的推动剂，于是有了HexoPD的诞生。顺便多熟悉下Swift3！</p>
+</code></pre><p><code>`</code><br>写一篇博文执行这些也无所谓了。可是当多写几篇。我会被烦死了。越来越懒。也许懒是进步的推动剂，于是有了HexoPD的诞生。顺便多熟悉下Swift3！</p>
 <h3 id="HexoPD简介"><a href="#HexoPD简介" class="headerlink" title="HexoPD简介"></a>HexoPD简介</h3><p>作为博主，最常用的功能应该是post和deploy。故取名HexoPD。该App主要解决Hexo最常用的操作！<br>主要有以下功能：</p>
 <ul>
 <li>可设置打开Markdown文件软件，预设MacDown</li>
@@ -1993,7 +1989,7 @@ hexo server   # 启动本地服务器查看
 <li>列表化已有博文，并可以直接使用MacDown打开</li>
 <li>一键Clean、Server、Generate、Deploy</li>
 </ul>
-<h3 id="HexoPD界面"><a href="#HexoPD界面" class="headerlink" title="HexoPD界面"></a>HexoPD界面</h3><p><img src="http://oevfty3i3.bkt.clouddn.com/2016101363201QQ20161013-2.png" alt="2016101363201QQ20161013-2.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101387467BE2FBC2D-D11B-4D06-9F5F-D18AD77DC341.png" alt="2016101387467BE2FBC2D-D11B-4D06-9F5F-D18AD77DC341.png"></p>
+<h3 id="HexoPD界面"><a href="#HexoPD界面" class="headerlink" title="HexoPD界面"></a>HexoPD界面</h3><p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108013930.png" alt=""><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108013912.png" alt=""></p>
 <h3 id="HexoPD下载地址"><a href="#HexoPD下载地址" class="headerlink" title="HexoPD下载地址"></a>HexoPD下载地址</h3><blockquote>
 <p>下载地址：<a href="https://pan.baidu.com/s/1i5hUFsh" target="_blank" rel="noopener">https://pan.baidu.com/s/1i5hUFsh</a>  密码：tsqv</p>
 </blockquote>
@@ -2163,7 +2159,7 @@ hexo server   # 启动本地服务器查看
         
           
             <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>Mac对Flash的支持真的。。。哎！<br>曾经的ClickToPluginForChina也不再给力。<br>无奈。只能自己写一个。<br>初版。有点简陋。搜索接口调用的优酷的。。目前只支持常见的视频。</p>
-<h3 id="MSOP界面"><a href="#MSOP界面" class="headerlink" title="MSOP界面"></a>MSOP界面</h3><p><img src="http://oevfty3i3.bkt.clouddn.com/2016101392167QQ20161008-0.png" alt="2016101392167QQ20161008-0.png"><br><img src="http://oevfty3i3.bkt.clouddn.com/2016101441316QQ20161014-0.png" alt="2016101441316QQ20161014-0.png"></p>
+<h3 id="MSOP界面"><a href="#MSOP界面" class="headerlink" title="MSOP界面"></a>MSOP界面</h3><p><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103750.png" alt="2016101392167QQ20161008-0.png"><br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103802.png" alt="2016101441316QQ20161014-0.png"></p>
 <blockquote>
 <p>2016-10-08 Ver 1.0.0 初版<br>2016-10-08 Ver 1.1.0Fix Bug：播放视频再次搜索闪退<br>2016-10-09 Ver 1.1.1Fix Bug：资源解析失败，卡住。<br>2016-10-10 Ver 1.1.2Fix Bug<br>2016-10-14 ver 1.1.3新增：播放URL<br>2016-10-15 ver 1.1.4新增：快捷键（暂停、播放、前进、后退）</p>
 </blockquote>
