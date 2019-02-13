@@ -1,0 +1,45 @@
+Package: com.zlxdike.HomeGesture
+Version: 1.78
+Architecture: iphoneos-arm
+Depends: firmware (>= 11.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.78_iphoneos-arm.deb
+Size: 96660
+MD5sum: 660c3526452fe0f1b0e2efde07a1b32b
+SHA1: e9791ee52558b86e0ac6f6c6e772e172abe286c6
+SHA256: 1a94595b032158cc8095bf4f9fff5864b5941d1236810bd8fe8e417157222036
+Section: System
+Priority: optional
+Description: 手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关，修复iOS12控制中心奔溃
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.tgUnblock4Swift
+Version: 0.1-1
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.tgUnblock4Swift_0.1-1_iphoneos-arm.deb
+Size: 20890
+MD5sum: e8ed820b4d01545f0eb2ce99194f6ae3
+SHA1: 3423c09ec95f1de17219b20d16257c0cfae26663
+SHA256: 18e7371fafb6aeea2dad9981d863ca12e23eb8e829f01f5af36ab17489c31c13
+Section: System
+Priority: optional
+Description: Swift版Telegram解除channel屏蔽(Telegarm Messenger5.0.15 iOS11.1.1测试通过)
+Author: zlxdike
+Name: tgUnblock4Swift
+
+Package: com.zlxdike.wechatNoJB
+Version: 0.1-1
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.wechatNoJB_0.1-1_iphoneos-arm.deb
+Size: 21406
+MD5sum: 33fa7b913fa09e602f0cb11b4d6480ae
+SHA1: aa7828b1551849d2295073cf710db6e12597f766
+SHA256: e7b67da5ec10be29c27112be4a9560ffff2accb0de148df9da6f61aff0034413
+Section: System
+Priority: optional
+Description: wechat去除越狱检测，这样能开启指纹支付
+Author: zlxdike
+Name: wechatNoJB
+
