@@ -435,8 +435,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT,RELOAD,SHOW DATABASES,LOCK TABLES,EVENT,REPLICATION CLIENT ON *.* TO &#123;bakname&#125;@&quot;%&quot; IDENTIFIED BY &quot;&#123;passwd&#125;&quot;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
 <p>由于要备份到本地的PC上所以我设置的用户是具有远程访问权限的！</p>
 <h3 id="macOS配置"><a href="#macOS配置" class="headerlink" title="macOS配置"></a>macOS配置</h3><p>利用mysqldump进行备份。。此软件可以在mysql workbench community中找到。<br><img src="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181023103300.png" alt="jpg"><br>利用macOS定时任务。进行定时备份。macOS可以选<code>crontab</code>或者<code>launchctl</code>就看你习惯。</p>
-<p>我选择用<code>launchctl</code>。<br>这个是通过plist配置的方式来实现定时任务的，其优点就是最小时间间隔是一秒</p>
-<p>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。</p>
+<p>我选择用<code>launchctl</code>。<br>这个是通过plist配置的方式来实现定时任务的，其优点就是最小时间间隔是一秒<br><a id="more"></a><br>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。</p>
 <p>可以通过两种方式来设置脚本的执行时间。一个是使用<code>StartInterval</code>，它指定脚本每间隔多长时间（单位：秒）执行一次；另外一个使用<code>StartCalendarInterval</code>，它可以指定脚本在多少分钟、小时、天、星期几、月时间上执行，类似如crontab的中的设置。</p>
 <p>例:</p>
 <p>新建一个shell文件/Users/yourname/Documents/bakmysql.sh，并将mysqldump与bakmysql.sh放在一起。</p>

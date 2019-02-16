@@ -436,6 +436,7 @@
 <blockquote>
 <p>修改<strong>/etc/sysconfig/network-scripts/ifcfg-eth0</strong>文件<br>将ONBOOT=no改为ONBOOT=yes<br>重启VPS即可</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h3><p>这里有一键安装shadowsocks-libev脚本,安装过程会让设置密码和端口！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh</span><br><span class="line">chmod +x shadowsocks-libev.sh</span><br><span class="line">./shadowsocks-libev.sh 2&gt;&amp;1 | tee shadowsocks-libev.log</span><br></pre></td></tr></table></figure>
 <p>shadowsocks-libev相关命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>查看状态：/etc/init.d/shadowsocks status</p>
