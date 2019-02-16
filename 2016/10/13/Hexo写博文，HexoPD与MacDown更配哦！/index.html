@@ -108,20 +108,20 @@
 
 
 
-  <meta name="description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。12345    cd ~/Documents/hexo                   # 进入Hexo根目录    hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题    open -a macdo">
+  <meta name="description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。123cd ~/Documents/hexo                   # 进入Hexo根目录hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题open -a macdown source/_pos">
 <meta name="keywords" content="Swift3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo写博文，HexoPD与MacDown更配哦！">
 <meta property="og:url" content="http://zlxdike.github.io/2016/10/13/Hexo写博文，HexoPD与MacDown更配哦！/index.html">
 <meta property="og:site_name" content="小渣渣">
-<meta property="og:description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。12345    cd ~/Documents/hexo                   # 进入Hexo根目录    hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题    open -a macdo">
+<meta property="og:description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。123cd ~/Documents/hexo                   # 进入Hexo根目录hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题open -a macdown source/_pos">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108013930.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108013912.png">
 <meta property="og:updated_time" content="2016-10-13T14:58:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo写博文，HexoPD与MacDown更配哦！">
-<meta name="twitter:description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。12345    cd ~/Documents/hexo                   # 进入Hexo根目录    hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题    open -a macdo">
+<meta name="twitter:description" content="初衷写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。123cd ~/Documents/hexo                   # 进入Hexo根目录hexo new post $&amp;#123;title&amp;#125;                # $&amp;#123;title&amp;#125;为博文标题open -a macdown source/_pos">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zlxdike/zlxdikeblogimg/master/img/20181108013930.png">
 
 
@@ -429,13 +429,10 @@
       
 
       
-        <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    cd ~/Documents/hexo                   # 进入Hexo根目录</span><br><span class="line">    hexo new post $&#123;title&#125;                # $&#123;title&#125;为博文标题</span><br><span class="line">    open -a macdown source/_post/$&#123;title&#125; # 使用macdown打开</span><br><span class="line">```  </span><br><span class="line">编辑完要发布还需要执行下面命令</span><br></pre></td></tr></table></figure></p>
-<pre><code>hexo g   # 等价于hexo generate 生成静态文件
-hexo d   # 等价于hexo deploy   发布
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">也许还需要执行下面命令，清除或检查效果。</span><br></pre></td></tr></table></figure>
-<pre><code>hexo clean    # 清除已经生成的静态文件
-hexo server   # 启动本地服务器查看
-</code></pre><p><code>`</code><br>写一篇博文执行这些也无所谓了。可是当多写几篇。我会被烦死了。越来越懒。也许懒是进步的推动剂，于是有了HexoPD的诞生。顺便多熟悉下Swift3！<br><a id="more"></a></p>
+        <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>写这个软件初衷也只是为了今后写博文方便点。每次创建新的post都要执行下面命令，也是挺烦的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Documents/hexo                   <span class="comment"># 进入Hexo根目录</span></span><br><span class="line">hexo new post <span class="variable">$&#123;title&#125;</span>                <span class="comment"># $&#123;title&#125;为博文标题</span></span><br><span class="line">open -a macdown <span class="built_in">source</span>/_post/<span class="variable">$&#123;title&#125;</span> <span class="comment"># 使用macdown打开</span></span><br></pre></td></tr></table></figure></p>
+<p>编辑完要发布还需要执行下面命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g   <span class="comment"># 等价于hexo generate 生成静态文件</span></span><br><span class="line">hexo d   <span class="comment"># 等价于hexo deploy   发布</span></span><br></pre></td></tr></table></figure></p>
+<p>也许还需要执行下面命令，清除或检查效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean    <span class="comment"># 清除已经生成的静态文件</span></span><br><span class="line">hexo server   <span class="comment"># 启动本地服务器查看</span></span><br></pre></td></tr></table></figure></p>
+<p>写一篇博文执行这些也无所谓了。可是当多写几篇。我会被烦死了。越来越懒。也许懒是进步的推动剂，于是有了HexoPD的诞生。顺便多熟悉下Swift3！<br><a id="more"></a></p>
 <h3 id="HexoPD简介"><a href="#HexoPD简介" class="headerlink" title="HexoPD简介"></a>HexoPD简介</h3><p>作为博主，最常用的功能应该是post和deploy。故取名HexoPD。该App主要解决Hexo最常用的操作！<br>主要有以下功能：</p>
 <ul>
 <li>可设置打开Markdown文件软件，预设MacDown</li>
