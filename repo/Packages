@@ -1,4 +1,199 @@
 Package: com.zlxdike.HomeGesture
+Version: 1.1
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.1_iphoneos-arm.deb
+Size: 27086
+MD5sum: c9fb1aef942dc9d17fca772b7d976d42
+SHA1: 50bb2182d9428f56dca0b1db8477a967ec873ae4
+SHA256: c58d1f0be574975f51983ddcec1b2b7293ede87f030a4c34b77af7c667e3dec5
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.2
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.2_iphoneos-arm.deb
+Size: 27196
+MD5sum: 84055a404101b88deff8d9bae04278fa
+SHA1: a12c2ff8d20d7a2cd44179c90b0cab18f5781dec
+SHA256: b915e1dc58689236486dc178d35f355887da1ae0d3f5d8308769cfade461d78a
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.3
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.3_iphoneos-arm.deb
+Size: 27932
+MD5sum: 34c085ba31a160021df82b1bed7f694a
+SHA1: f7b0cfb72c7d520fe350ddbe554c2881adb7c7a9
+SHA256: e06199b1e25c2f776f21c1cddee3b02497e99a705aa9fbf08eb47c66955c317d
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.4
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.4_原灵敏度.deb
+Size: 24858
+MD5sum: 1d91cbc8b5a9a895e138abe97c535f20
+SHA1: 30e5011b4d12509460cc671bba9db1cbc5b55aec
+SHA256: 67676269df912d66598323a656d0ef7e7bc2609f6d05850c31177ebf7e864cf1
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.4
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.4低灵敏度.deb
+Size: 24972
+MD5sum: 8881fa34b53c217a8f735e6a5bf0bb30
+SHA1: 423fcea3611d83a0215f4a4f28a5c870db483b69
+SHA256: 86e6f4548a2b780ad00b609ec51794f1278ed20f0dbf9aaf820395d8d8e06113
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.5
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.5_iphoneos-arm低灵敏度.deb
+Size: 69624
+MD5sum: 9ea9b9f096b779c2ef020de7436ecb1e
+SHA1: 1c8bfa50dff153100830b47f1657ae30daf83878
+SHA256: 485a2513f9a25bec6418e5f94db5a62e0864603bf67adcb426f5f29028888879
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.5
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.5_iphoneos-arm原灵敏度.deb
+Size: 69514
+MD5sum: 01914b0fb0df53a8844f728bade663e9
+SHA1: cff53ed89eb1884d7ba6db8e5298d283301e74e9
+SHA256: c5c89525847fd68cd6554acb7397054d47fcc9fb11a63dcf16bafcb8276e9c3d
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,运营商显示，后台上滑关闭APP
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.6
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.6_iphoneos-arm.deb
+Size: 74148
+MD5sum: bca15a47610acbe38a5cfa99a72e9521
+SHA1: 2dd51239bb8372acfb471ca21ce8a53b06177c1d
+SHA256: ec0b0eaf3c8b8ef4de4b6633230bffb41fb0e8b445fe8dfb85d3eb9b65fcb532
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.72
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.72_iphoneos-arm.deb
+Size: 84408
+MD5sum: 86d8d05af79b9fb7554c82914aa94c27
+SHA1: c5ef4007bfde511fcf08a60b5f79f2901ccc71f5
+SHA256: fb8f7ab9b9d1853b184e6dc62dc8dfaa942c45eb88bf7d3c2a1dcc0b4e2f745e
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.73
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.73_iphoneos-arm.deb
+Size: 69004
+MD5sum: 4c2b581a6fdb1510224195d1857b2ee3
+SHA1: 33e0f33904cb78e9082fe8f8a173ba16649ff52e
+SHA256: d64f4f421c5dc3d8e139ce374414859014a2c6b78274f7bb8d9dc3ff0792b427
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.74
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.74_iphoneos-arm.deb
+Size: 73538
+MD5sum: 84ae639491e9554927a528cd0de58e8e
+SHA1: e270b83a20483994f12de63b2b68de716aa41ff9
+SHA256: 91a7b7e983b62796acfa62ae1301df15f4575e38c00a17fb503335be62453c0f
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.75
+Architecture: iphoneos-arm
+Depends: firmware (>= 5.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.75_iphoneos-arm.deb
+Size: 75874
+MD5sum: 503053af34725a33148791334f6fb1a9
+SHA1: 769b6680019199d3f5178d993a059f61a44a3c0f
+SHA256: 76f1358a66ba1daa1f9acc93591ef729f741d5fa4c47dc7d66388474f9bb58b1
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
+Version: 1.76
+Architecture: iphoneos-arm
+Depends: firmware (>= 11.0), mobilesubstrate
+Filename: debs/com.zlxdike.HomeGesture_1.76_iphoneos-arm.deb
+Size: 80722
+MD5sum: dd2385f9865153810c6694a141612226
+SHA1: 7494e25a6fe69feb2654b9e6a16abf394b12a924
+SHA256: a75c0e6984e34514ebcc04b446e2e75ed75aeebe2f612788c2428c3e1aa005a3
+Section: System
+Priority: optional
+Description: iOS11手势插件，修复微信语音bug,相机退出BUG，后台上滑关闭APP等,带设置开关
+Author: zlxdike
+Name: HomeGesture
+
+Package: com.zlxdike.HomeGesture
 Version: 1.77
 Architecture: iphoneos-arm
 Depends: firmware (>= 11.0), mobilesubstrate
