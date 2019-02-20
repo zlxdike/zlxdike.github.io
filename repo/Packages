@@ -1,12 +1,12 @@
 Package: com.zlxdike.HomeGesture
-Version: 2.0.1
+Version: 2.0.2
 Architecture: iphoneos-arm
 Depends: firmware (>= 11.0), mobilesubstrate
-Filename: debs/com.zlxdike.HomeGesture_2.0.1_iphoneos-arm.deb
-Size: 110106
-MD5sum: fc2d9fcf76ce2dd03e91de2e50681967
-SHA1: 2189400d846b1aa9ad50637d571d3e148d33a15b
-SHA256: 8286121cc1dc7bd56ba06918309ec808879099844822c2fdcdc4124a6d368792
+Filename: debs/com.zlxdike.HomeGesture_2.0.2_iphoneos-arm.deb
+Size: 110642
+MD5sum: 405ad2661e6f102be29d57a8a80c4cbf
+SHA1: 4f72fc2365f8ffa70a542028c3097792563e4fb6
+SHA256: db7442b2e12da584da4146b8af96114e82d08fdff8019b883ce5ec3684416263
 Section: System
 Priority: optional
 Description: HomeGesture修复微信语音bug,相机退出BUG，带设置开关，修复iOS12控制中心奔溃,X状态栏
