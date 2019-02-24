@@ -3,13 +3,13 @@ Version: 1.0.0
 Architecture: iphoneos-arm
 Depends: firmware (>= 12.0), mobilesubstrate
 Filename: debs/com.zlxdike.GestureX_1.0.0_iphoneos-arm.deb
-Size: 65422
-MD5sum: 98c388ad8cef08cb15c363acf0db53d9
-SHA1: 9fc7f62722d7b360591d42f671435564ab0eb0d0
-SHA256: 3b0d257d48a4b97d298032ccf25ca3ee0d970808b6853c4e2ff0d7d1bc90d528
+Size: 67870
+MD5sum: 21b8c8fd536a7651fcfdc92ee34d4e14
+SHA1: 5bcdb286d19d4b8c974c65f4005bb6cac445cd2e
+SHA256: b9802c168cd020d590775a9ed07e00046c230c5a7dab170ccaa2cc8cdd401d19
 Section: System
 Priority: optional
-Description: GestureX
+Description: GestureX For iOS12
 Author: zlxdike
 Name: GestureX
 
