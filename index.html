@@ -821,7 +821,7 @@
 
       
         
-          <p>Cydia源：<code>http://zlxdike.github.io/repo</code></p>
+          <p>Cydia源：<code>http://zlxdike.github.io/repo/</code></p>
 <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>最新得Telegram已经开始全部使用Swift开发了。导致之前得tgunblock tweak失效。于是就想要自己试试hook swift。也当作一个学习过程吧。<code>研究了一半后发现已经有现成插件了，叫nsfwgram，支持swift版的Telegram，不过既然都开始研究了，也顺便继续下去。自己在写一个吧。</code></p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>Github上其实有Swift版Telegram的源码，能减少很多功夫。项目叫<a href="https://github.com/overtake/TelegramSwift" target="_blank" rel="noopener">TelegramSwift</a><br>git clone下来看了下。hook<code>PeerUtils.swift</code>中的<a href="https://github.com/peter-iakovlev/TelegramCore/blob/5ff1b009127adb935f1caab0a4af8c8d5350d612/TelegramCore/PeerUtils.swift#L41" target="_blank" rel="noopener">public var restrictionText: String?{}</a>方法就可以解决channel被屏蔽的问题<br>
           <!--noindex-->
