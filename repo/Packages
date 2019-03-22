@@ -70,6 +70,7 @@ SHA256: 775b57e75898b156990b045c1c20952673db37d11e525df2248cdac08115dc2c
 Section: System
 Priority: optional
 Description: GestureX For iOS12，Update History：https://zlxdike.github.io
+Depiction: http://192.168.123.105:4000/repo/depiction/ad.html
 Author: zlxdike
 Name: GestureX
 
