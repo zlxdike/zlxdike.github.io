@@ -21,7 +21,7 @@ with open("Packages","rb") as f:
 		with open(filename,"wb") as f1:
 			f1.write(templateData.replace("[[ Description ]]",description))
 
-		depiction = "\nDepiction: repo/" +  filename
+		depiction = "\nDepiction: https://zlxdike.github.io/repo/" +  filename
 		x = x + depiction
 		newPackagesInfo.append(x)
 
