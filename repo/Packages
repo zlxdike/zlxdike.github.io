@@ -58,6 +58,21 @@ Description: GestureX For iOS12，Update History：https://zlxdike.github.io
 Author: zlxdike
 Name: GestureX
 
+Package: com.zlxdike.GestureX
+Version: 1.0.4
+Architecture: iphoneos-arm
+Depends: firmware (>= 12.0), mobilesubstrate, preferenceloader
+Filename: debs/com.zlxdike.GestureX_1.0.4_iphoneos-arm.deb
+Size: 81346
+MD5sum: d11ab49ca1edf8a98d268c2ba845f7d7
+SHA1: f91d2b01894874837910aec4873edcce58008c1c
+SHA256: 775b57e75898b156990b045c1c20952673db37d11e525df2248cdac08115dc2c
+Section: System
+Priority: optional
+Description: GestureX For iOS12，Update History：https://zlxdike.github.io
+Author: zlxdike
+Name: GestureX
+
 Package: com.zlxdike.HomeGesture
 Version: 1.1
 Architecture: iphoneos-arm
