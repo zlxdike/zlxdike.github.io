@@ -108,23 +108,25 @@
 
 
 
-  <meta name="description" content="一点也不严谨，纯属胡说八道。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小渣渣">
-<meta property="og:url" content="http://zlxdike.github.io/archives/index.html">
+  <meta name="description" content="需求内网穿透方法很多，常用得有ngrok，frp，花生壳等。我选择OpenVpn主要是安全性更好点。花生壳、ngrok和frp，实现得内网穿透。知道你域名或者外网IP就能直接连到你得对应机器得端口上。而openvpn方式有点不一样。A服务器运行server，B客户机运行client连接A服务器，C客户机运行client连接A服务器。然后B就能直接与C通信。 搭建server1wget https:">
+<meta name="keywords" content="Windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenVpn内网穿透">
+<meta property="og:url" content="http://zlxdike.github.io/2019/04/28/OpenVpn内网穿透/index.html">
 <meta property="og:site_name" content="小渣渣">
-<meta property="og:description" content="一点也不严谨，纯属胡说八道。">
+<meta property="og:description" content="需求内网穿透方法很多，常用得有ngrok，frp，花生壳等。我选择OpenVpn主要是安全性更好点。花生壳、ngrok和frp，实现得内网穿透。知道你域名或者外网IP就能直接连到你得对应机器得端口上。而openvpn方式有点不一样。A服务器运行server，B客户机运行client连接A服务器，C客户机运行client连接A服务器。然后B就能直接与C通信。 搭建server1wget https:">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-28T15:07:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小渣渣">
-<meta name="twitter:description" content="一点也不严谨，纯属胡说八道。">
+<meta name="twitter:title" content="OpenVpn内网穿透">
+<meta name="twitter:description" content="需求内网穿透方法很多，常用得有ngrok，frp，花生壳等。我选择OpenVpn主要是安全性更好点。花生壳、ngrok和frp，实现得内网穿透。知道你域名或者外网IP就能直接连到你得对应机器得端口上。而openvpn方式有点不一样。A服务器运行server，B客户机运行client连接A服务器，C客户机运行client连接A服务器。然后B就能直接与C通信。 搭建server1wget https:">
 
 
 
 
 
 
-  <link rel="canonical" href="http://zlxdike.github.io/archives/">
+  <link rel="canonical" href="http://zlxdike.github.io/2019/04/28/OpenVpn内网穿透/">
 
 
 
@@ -134,7 +136,7 @@
   };
 </script>
 
-  <title>归档 | 小渣渣</title>
+  <title>OpenVpn内网穿透 | 小渣渣</title>
   
 
 
@@ -202,7 +204,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -263,7 +265,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -296,426 +298,224 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zlxdike.github.io/2019/04/28/OpenVpn内网穿透/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zlxdike">
+      <meta itemprop="description" content="一点也不严谨，纯属胡说八道。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小渣渣">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">OpenVpn内网穿透
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-28 23:07:37" itemprop="dateCreated datePublished" datetime="2019-04-28T23:07:37+08:00">2019-04-28</time>
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/28/OpenVpn内网穿透/" itemprop="url">
-              
-                <span itemprop="name">OpenVpn内网穿透</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T23:07:37+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/02/Win10局域网内使用远程影子模式（Session-Shadowing-Mode）/" itemprop="url">
-              
-                <span itemprop="name">Win10局域网内使用远程影子模式（Session Shadowing Mode）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-02T18:46:20+08:00" content="2019-04-02">
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/25/iOS12手势插件GestureX/" itemprop="url">
-              
-                <span itemprop="name">iOS12手势插件GestureX</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T02:24:59+08:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/22/Frida-iOS12/" itemprop="url">
-              
-                <span itemprop="name">Frida iOS12</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-22T01:07:13+08:00" content="2019-02-22">
-          02-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/28/Swift-Hook尝试-Telegram-Unblock/" itemprop="url">
-              
-                <span itemprop="name">Swift Hook尝试(Telegram Unblock)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-28T00:21:14+08:00" content="2018-10-28">
-          10-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/22/Windows硬链接解决某盘空间不足/" itemprop="url">
-              
-                <span itemprop="name">Windows硬链接解决某盘空间不足</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-22T10:24:28+08:00" content="2018-10-22">
-          10-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/26/HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG/" itemprop="url">
-              
-                <span itemprop="name">HomeGesture修改版，修复微信语音BUG，相机上划关闭BUG</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-26T00:59:57+08:00" content="2018-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/28/OpenVpn内网穿透/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/28/OpenVpn内网穿透/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/28/Vultr-VPS-SSH密钥登录/" itemprop="url">
-              
-                <span itemprop="name">Vultr VPS SSH密钥登录</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-28T14:40:46+08:00" content="2017-05-28">
-          05-28
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/28/服务器Mysql数据库定时备份到本地PC/" itemprop="url">
-              
-                <span itemprop="name">服务器Mysql数据库定时备份到本地PC</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-28T14:39:54+08:00" content="2017-05-28">
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/10/B75M-D3V-Ozmosis-再战macOS-Sierra！/" itemprop="url">
-              
-                <span itemprop="name">B75M-D3V Ozmosis 再战macOS Sierra！</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-10T01:32:32+08:00" content="2017-04-10">
-          04-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>内网穿透方法很多，常用得有ngrok，frp，花生壳等。我选择OpenVpn主要是安全性更好点。花生壳、ngrok和frp，实现得内网穿透。知道你域名或者外网IP就能直接连到你得对应机器得端口上。<br>而openvpn方式有点不一样。A服务器运行server，B客户机运行client连接A服务器，C客户机运行client连接A服务器。然后B就能直接与C通信。</p>
+<h3 id="搭建server"><a href="#搭建server" class="headerlink" title="搭建server"></a>搭建server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://git.io/vpn -O openvpn-install.sh &amp;&amp; bash openvpn-install.sh</span><br></pre></td></tr></table></figure>
+<p>一键傻瓜式，只要填入相关信息就可搭建成功。</p>
+<a id="more"></a>
+<h3 id="配置调整"><a href="#配置调整" class="headerlink" title="配置调整"></a>配置调整</h3><p>其实任何东西都不修改的情况下，客户机直接使用生成的client.ovpn即可跑起来了。<br>不过这样的话。所有流量都是走的服务器上，对于我来说。只是想要B和C能通信，并不需要全局走openvpn。那么需要修改下2个东西即可。</p>
+<h4 id="修改server-ovpn"><a href="#修改server-ovpn" class="headerlink" title="修改server.ovpn"></a>修改server.ovpn</h4><p>/etc/openvpn/server.conf注释掉这一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#push "redirect-gateway def1 bypass-dhcp"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="修改client-ovpn"><a href="#修改client-ovpn" class="headerlink" title="修改client.ovpn"></a>修改client.ovpn</h4><p>client.ovpn注释掉这一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#setenv opt block-outside-dns</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>修改后，所有流量还是正常走本地，但是B和C可以使用openvpn分配的内网IP进行通信。至于用途，比如用ipad连上openvpn后。就可以直接访问家里PC的后台服务等等。。。。<br>还有其他用法。比如修改client.ovpn加入，可以强制该段走net_gateway或vpn_gateway<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">route 192.168.123.0 255.255.255.0 net_gateway</span><br><span class="line">route 192.168.123.0 255.255.255.0 vpn_gateway</span><br></pre></td></tr></table></figure></p>
 
       
-
     </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+    <div>
+      
+        <hr>
+<div>
+    
+        <div style="text-align:center;font-size:16px;letter-spacing: 8px;">本文结束<i class="fa fa-bell"></i>感谢您的阅读</div>
+    
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>zlxdike</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zlxdike.github.io/2019/04/28/OpenVpn内网穿透/" title="OpenVpn内网穿透">http://zlxdike.github.io/2019/04/28/OpenVpn内网穿透/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/02/Win10局域网内使用远程影子模式（Session-Shadowing-Mode）/" rel="next" title="Win10局域网内使用远程影子模式（Session Shadowing Mode）">
+                <i class="fa fa-chevron-left"></i> Win10局域网内使用远程影子模式（Session Shadowing Mode）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
@@ -724,6 +524,13 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+  
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
 
 
         </div>
@@ -745,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -869,6 +685,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建server"><span class="nav-number">2.</span> <span class="nav-text">搭建server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置调整"><span class="nav-number">3.</span> <span class="nav-text">配置调整</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改server-ovpn"><span class="nav-number">3.1.</span> <span class="nav-text">修改server.ovpn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改client-ovpn"><span class="nav-number">3.2.</span> <span class="nav-text">修改client.ovpn</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结束"><span class="nav-number">4.</span> <span class="nav-text">结束</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1006,6 +838,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
